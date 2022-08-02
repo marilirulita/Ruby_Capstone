@@ -29,8 +29,10 @@ def generate_id
 end
 
 def create_movie
+  id = generate_id
   publish_date = ask_publish_date
-
+  archived = ask_archived
+  silet = ask_is_silet
   movie = Movie.new()
 end
 
@@ -38,6 +40,20 @@ def ask_publish_date
   print 'Publish date [yyyy-mm-dd]: '
   date = gets.chomp
   return date
+end
+
+def ask_archived
+  print 'Is archived? [Ss/Nn]: '
+  response = gets.chomp
+  
+  parse_response(response)
+end
+
+def ask_is_silet
+  print 'Is silet? [Ss/Nn]: '
+  response = gets.chomp
+
+  parse_response(response)
 end
 
 def create_genre
@@ -74,4 +90,11 @@ def create_author
   las_name = gets.chomp
 
   Author.new(id, name, las_name)
+end
+
+def parse_response(response)
+  is_data_ok = false if %w[n N].include? response
+  is_data_ok = true if %w[y Y].include? response
+
+  is_data_ok
 end
