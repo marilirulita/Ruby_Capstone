@@ -14,7 +14,7 @@ describe Movie do
 
   describe 'Create a new movie not older than 10 years but silet' do
     movie = Movie.new('2022-08-02', archived: false, silet: true)
-    
+
     can_be_archived = movie.can_be_archived?
 
     it 'should return true' do
