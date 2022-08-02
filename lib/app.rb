@@ -17,6 +17,13 @@ class App
       'Add a game',
       'Exit'
     ]
+    @books_list = []
+    @music_list = []
+    @movies_list = []
+    @genres_list = []
+    @labels_list = []
+    @authors_list = []
+    @sources_list = []
   end
 
   def show_menu
