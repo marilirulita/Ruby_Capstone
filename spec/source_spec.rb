@@ -5,9 +5,9 @@ require_relative '../lib/helpers'
 describe Source do
   describe 'Create a new source "Online shop" and add it to a new movie' do
     publish_date = '2022-08-02'
-    movie_id = generate_id()
+    movie_id = generate_id
     movie = Movie.new(publish_date, movie_id, archived: false, silet: false)
-    source_id = generate_id()
+    source_id = generate_id
     source = Source.new(source_id, 'Online shop')
     movie.add_source(source)
 
