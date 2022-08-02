@@ -1,3 +1,5 @@
+require 'date'
+
 def list_all(arr, label)
   puts "List of all #{label}"
   print 'title | author | genre | source'
@@ -9,4 +11,8 @@ def list_all(arr, label)
     print "#{item.genre.name} | "
     print "#{item.source.name} \n"
   end
+end
+
+def create_date(year, month, day)
+  return DateTime.parse("#{year}-#{month}-#{day}")
 end
