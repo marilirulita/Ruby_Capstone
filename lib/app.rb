@@ -1,6 +1,7 @@
 require_relative 'helpers'
 
 class App
+  # rubocop:disable Metrics/MethodLength
   def initialize
     @menu_options = [
       'List all books',
@@ -25,46 +26,51 @@ class App
     @authors_list = []
     @sources_list = []
   end
+  # rubocop:enable Metrics/MethodLength
 
   def show_menu
     @menu_options.each_with_index do |option, index|
-      print "#{index + 1}) #{option} \n" 
+      print "#{index + 1}) #{option} \n"
     end
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity
+  # rubocop:disable Metrics/MethodLength
   def run
     show_menu
     print 'Option: '
     op = gets.chomp.to_i
 
-    case(op)
-    when 1 
+    case op
+    when 1
       print 'List all books'
-    when 2 
+    when 2
       print 'List all music albums'
-    when 3 
+    when 3
       print 'List all movies'
-    when 4 
+    when 4
       print 'List all games'
-    when 5 
+    when 5
       print 'List all genres'
-    when 6 
+    when 6
       print 'List all labels'
-    when 7 
+    when 7
       print 'List all authors'
-    when 8 
+    when 8
       print 'List all sources'
-    when 9 
+    when 9
       print 'Add a book'
-    when 10 
+    when 10
       print 'Add a music album'
-    when 11 
+    when 11
       print 'Add a movie'
-    when 12 
+    when 12
       print 'Add a game'
     when 13
       exit
     else 'Choose a valid option'
     end
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
+  # rubocop:enable Metrics/MethodLength
 end
