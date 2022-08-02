@@ -27,34 +27,37 @@ class App
 
   def run
     show_menu
-    print "Option: "
+    print 'Option: '
     op = gets.chomp.to_i
 
     case(op)
     when 1 
-      print "something"
+      print 'List all books'
     when 2 
-      print "something"
+      print 'List all music albums'
     when 3 
-      print "something"
+      print 'List all movies'
     when 4 
-      print "something"
+      print 'List all games'
     when 5 
-      print "something"
+      print 'List all genres'
     when 6 
-      print "something"
+      print 'List all labels'
     when 7 
-      print "something"
+      print 'List all authors'
     when 8 
-      print "something"
+      print 'List all sources'
     when 9 
-      print "something"
+      print 'Add a book'
     when 10 
-      print "something"
+      print 'Add a music album'
     when 11 
-      print "something"
+      print 'Add a movie'
     when 12 
-      print "something"
+      print 'Add a game'
+    when 13
+      exit
+    else 'Choose a valid option'
     end
   end
 end
