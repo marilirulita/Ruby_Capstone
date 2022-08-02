@@ -15,5 +15,4 @@ describe Label do
   it 'Label has a color' do
     expect(@label.color).to eq 'red'
   end
-
 end

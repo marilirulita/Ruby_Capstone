@@ -1,14 +1,14 @@
 require_relative '../lib/classes/book'
 
 describe Book do
-  before :each do 
+  before :each do
     @book = Book.new('publisher 1', 'cover_state', '2012-01-16', true)
   end
 
   it 'Return a book' do
     expect(@book).to be_a_instance_of Book
   end
-  
+
   it 'Book has a publisher' do
     expect(@book.publisher).to eq 'publisher 1'
   end
