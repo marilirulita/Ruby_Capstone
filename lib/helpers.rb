@@ -23,12 +23,15 @@ def generate_id
 end
 
 def create_movie
+  publish_date = ask_publish_date
+
   movie = Movie.new()
 end
 
 def ask_publish_date
   print 'Publish date [yyyy-mm-dd]: '
   date = gets.chomp
+  return date
 end
 
 def create_genre
