@@ -12,3 +12,7 @@ def list_all(arr, label)
     print "#{item.source.name} \n"
   end
 end
+
+def generate_id
+  rand(1..1000)
+end
