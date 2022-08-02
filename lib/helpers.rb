@@ -1,3 +1,5 @@
+require 'date'
+
 def list_all(arr, label)
   puts "List of all #{label}"
   print 'title | author | genre | source'
