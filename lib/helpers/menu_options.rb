@@ -1,6 +1,10 @@
 require_relative 'object_creation'
+require_relative 'preserve_data'
 
 def list_all(arr, label)
+  arr = recover_data(label)
+  arr = [] if arr.nil?
+  
   puts "List of all #{label}"
   print 'title | author | genre | source'
   arr.each_with_index do |item, index|

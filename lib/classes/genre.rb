@@ -12,4 +12,17 @@ class Genre
     @items.push(item)
     item.genre = self
   end
+
+  def to_json(*args)
+    {
+      JSON.create_id => self.class.name,
+      'name' => name,
+      'id' => id,
+      'items' => @items
+    }.to_json(*args)
+  end
+
+  def self.json_create(object)
+    new(object['name'], object['id'], object['items'])
+  end
 end
