@@ -10,11 +10,14 @@ class Movie < Item
     super || @silet ? true : false
   end
 
-  def to_json(*args)
+  def to_json()
     {
-      JSON.create_id => self.class.name,
       'id' => id,
+      'genre_id' => @genre.id,
+      'author_id' => @author.id,
+      'source_id' => @source.id,
+      'label_id' => @label.id,
       'silet' => @silet
-    }.to_json(*args)
+    }.to_json()
   end
 end
