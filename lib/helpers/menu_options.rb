@@ -2,8 +2,7 @@ require_relative 'object_creation'
 require_relative 'preserve_data'
 
 def list_all(arr, label)
-  data = recover_data(label)
-  data = arr if data.nil?
+  data = load_data(arr, label)
 
   puts "List of all #{label}"
   print 'title | author | genre | source'
@@ -16,6 +15,12 @@ def list_all(arr, label)
     print "#{item.source.name} \n"
   end
   run
+end
+
+def load_data(arr, file)
+  data = recover_data(file)
+  data = arr if data.nil?
+  data
 end
 
 def add_element(element, container)
