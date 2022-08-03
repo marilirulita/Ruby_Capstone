@@ -1,5 +1,4 @@
 require_relative '../lib/classes/movie'
-require_relative '../lib/helpers'
 
 describe Movie do
   describe 'Create a new movie older than 10 years but not silet' do

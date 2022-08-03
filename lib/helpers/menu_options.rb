@@ -18,7 +18,7 @@ def add_element(element, container)
   when 'Movie'
     container << create_movie
   else
-    raise NoMethodError.new("There's no method for this option")
+    raise NoMethodError, "There's no method for this option"
   end
 end
 

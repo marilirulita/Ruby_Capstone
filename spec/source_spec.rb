@@ -1,6 +1,6 @@
 require_relative '../lib/classes/source'
 require_relative '../lib/classes/movie'
-require_relative '../lib/helpers'
+require_relative '../lib/helpers/helpers'
 
 describe Source do
   describe 'Create a new source "Online shop" and add it to a new movie' do
