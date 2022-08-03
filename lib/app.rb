@@ -70,8 +70,8 @@ class App
       exit
     else 'Choose a valid option'
     end
-    
-    self.run
+
+    run
   end
   # rubocop:enable Metrics/CyclomaticComplexity
   # rubocop:enable Metrics/MethodLength
