@@ -41,7 +41,7 @@ class App
     print 'Option: '
     op = gets.chomp.to_i
 
-    menu_options.each do |option|
+    menu_options.map do |option|
       instance_eval(option[:method]) if op == option[:id]
     end
   end
