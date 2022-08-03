@@ -4,3 +4,7 @@ def parse_response(response)
 
   is_data_ok
 end
+
+def generate_id
+  rand(1..1000)
+end
