@@ -1,4 +1,4 @@
-require_relative '/helpers/menu_options'
+require_relative './helpers/menu_options'
 
 class App
   def initialize
@@ -12,7 +12,7 @@ class App
     @sources_list = []
   end
 
-  def menu_options
+  def options
     [
       { id: 1, text: 'List all books', method: 'list_all(@books_list, "Books")' },
       { id: 2, text: 'List all music albums', method: 'list_all(@music_list, "Music")' },
@@ -31,7 +31,7 @@ class App
   end
 
   def show_menu
-    menu_options.each do |option|
+    options.each do |option|
       print "#{option[:id]}) #{option[:text]} \n"
     end
   end
@@ -41,10 +41,9 @@ class App
     print 'Option: '
     op = gets.chomp.to_i
 
-    menu_options.map do |option|
+    options.map do |option|
       instance_eval(option[:method]) if op == option[:id]
     end
 
-    run
   end
 end
