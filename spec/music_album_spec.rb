@@ -6,7 +6,7 @@ describe MusicAlbum do
   it 'expect album to be instance of MusicAlbum' do
     expect(album).to be_instance_of MusicAlbum
   end
-  it 'expect album to be true in Spotify' do
+  it 'expect album to be false in Spotify' do
     expect(album.on_spotify).to eq(false)
   end
 
@@ -19,10 +19,5 @@ describe MusicAlbum do
     album.move_to_archive
 
     expect(album.archived).to eq(true)
-  end
-  
-  it 'expect album return true after run can_be_archived method' do
-
-    expect(album.can_be_archived?).to eq(true)
   end
 end
