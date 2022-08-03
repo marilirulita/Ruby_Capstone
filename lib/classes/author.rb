@@ -1,5 +1,7 @@
 class Author
-  def initialize(sample)
-    @sample = sample
+  def initialize(id, name, last_name)
+    @id = id
+    @name = name
+    @last_name = last_name
   end
 end
