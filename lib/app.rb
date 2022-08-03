@@ -44,5 +44,7 @@ class App
     menu_options.map do |option|
       instance_eval(option[:method]) if op == option[:id]
     end
+    
+    self.run
   end
 end
