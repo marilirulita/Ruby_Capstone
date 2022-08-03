@@ -33,7 +33,25 @@ def create_movie
   publish_date = ask_publish_date
   archived = ask_archived
   silet = ask_is_silet
-  movie = Movie.new()
+  
+  movie = Movie.new(publish_date, id, archived: archived, silet: silet)
+  item_setters(movies)
+
+  return movie
+end
+
+def item_setters(item)
+  author = create_author
+  item.add_author(author)
+
+  genre = create_genre
+  item.add_genre(genre)
+
+  source = create_source
+  item.add_source(source)
+
+  label = create_label
+  item.add_label(label)
 end
 
 def ask_publish_date
