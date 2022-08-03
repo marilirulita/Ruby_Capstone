@@ -23,7 +23,7 @@ class App
       { id: 7, text: 'List all authors', method: 'list_all(@authors_list, "Authors")' },
       { id: 8, text: 'List all sources', method: 'list_all(@sources_list, "Sources")' },
       { id: 9, text: 'Add a book', method: 'add_element("Book")' },
-      { id: 10, text: 'Add a music album', method: 'add_element("Music Album")' },
+      { id: 10, text: 'Add a music album', method: 'add_element("Music Album", @music_list)' },
       { id: 11, text: 'Add a movie', method: 'add_element("Movie", @movies_list)' },
       { id: 12, text: 'Add a game', method: 'add_element("Game")' },
       { id: 13, text: 'Exit', method: 'exit' }
@@ -41,8 +41,12 @@ class App
     print 'Option: '
     op = gets.chomp.to_i
 
-    options.map do |option|
-      instance_eval(option[:method]) if op == option[:id]
+    if op.positive? && op < 14
+      options.map do |option|
+        instance_eval(option[:method]) if op == option[:id]
+      end
+    else
+      option_not_available
     end
   end
 end
