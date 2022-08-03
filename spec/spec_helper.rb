@@ -1,4 +1,5 @@
 require_relative '../lib/classes/music_album'
+require_relative '../lib/classes/genre'
 
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
