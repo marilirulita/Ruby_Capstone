@@ -41,7 +41,7 @@ class App
     print 'Option: '
     op = gets.chomp.to_i
 
-    if op.positive? && op < 14
+    if op.positive? && op <= options.length
       options.map do |option|
         instance_eval(option[:method]) if op == option[:id]
       end
