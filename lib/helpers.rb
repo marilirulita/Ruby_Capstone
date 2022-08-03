@@ -2,7 +2,6 @@ require_relative 'classes/movie'
 require_relative 'classes/genre'
 require_relative 'classes/label'
 require_relative 'classes/author'
-require_relative 'classes/movie'
 require 'date'
 
 def list_all(arr, label)
@@ -27,11 +26,11 @@ def create_movie
   publish_date = ask_publish_date
   archived = ask_archived
   silet = ask_is_silet
-  
+
   movie = Movie.new(publish_date, id, archived: archived, silet: silet)
   item_setters(movies)
 
-  return movie
+  movie
 end
 
 def item_setters(item)
@@ -50,14 +49,13 @@ end
 
 def ask_publish_date
   print 'Publish date [yyyy-mm-dd]: '
-  date = gets.chomp
-  return date
+  gets.chomp
 end
 
 def ask_archived
   print 'Is archived? [Ss/Nn]: '
   response = gets.chomp
-  
+
   parse_response(response)
 end
 
