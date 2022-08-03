@@ -15,3 +15,22 @@ CREATE TABLE labels(
   title TEXT,
   color TEXT,
 )
+
+
+CREATE TABLE movies(
+  id INTEGER GENERATED ALWAYS AS IDENTITY,
+  genre INTEGER REFERENCES genres(id),
+  author INTEGER REFERENCES authors(id),
+  label INTEGER REFERENCES labels(id),
+  source INTEGER REFERENCES sources(id),
+  publish_date DATE,
+  archived BOOLEAN,
+  silet BOOLEAN,
+  PRIMARY KEY(id)
+)
+
+CREATE TABLE sources(
+  id INTEGER GENERATED ALWAYS AS IDENTITY,
+  name TEXT,
+  PRIMARY KEY(id)
+)
