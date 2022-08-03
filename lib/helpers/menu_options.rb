@@ -16,7 +16,8 @@ end
 def add_element(element, container)
   case element
   when 'Movie'
-    container << create_movie
+    movie_id = generate_id(container)
+    container << create_movie(movie_id)
   else
     raise NoMethodError, "There's no method for this option"
   end
