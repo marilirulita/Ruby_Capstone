@@ -4,7 +4,7 @@ require_relative 'preserve_data'
 def list_all(arr, label)
   arr = recover_data(label)
   arr = [] if arr.nil?
-  
+
   puts "List of all #{label}"
   print 'title | author | genre | source'
   arr.each_with_index do |item, index|
@@ -24,6 +24,7 @@ def add_element(element, container)
     container << create_movie
   when 'Music Album'
     container << create_music
+    save_data(container, 'music_album')
   else
     raise NoMethodError, "There's no method for this option"
   end
