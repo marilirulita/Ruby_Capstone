@@ -47,7 +47,7 @@ class App
     when 2
       print 'List all music albums'
     when 3
-      print 'List all movies'
+      list_all(@movies_list, 'Movies')
     when 4
       print 'List all games'
     when 5
@@ -63,7 +63,7 @@ class App
     when 10
       print 'Add a music album'
     when 11
-      print 'Add a movie'
+      @movies_list << create_movie
     when 12
       print 'Add a game'
     when 13
