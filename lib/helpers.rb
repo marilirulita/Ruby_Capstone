@@ -12,3 +12,11 @@ def list_all(arr, label)
     print "#{item.source.name} \n"
   end
 end
+
+def add_element(element)
+  puts "Here is the method to add element #{element}"
+end
+
+def exit
+  puts 'Thanks for using this App'
+end
