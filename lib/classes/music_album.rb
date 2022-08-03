@@ -16,14 +16,20 @@ class MusicAlbum < Item
       'on_spotify' => on_spotify,
       'id' => id,
       'archived' => @archived,
-      'genre' => genre
+      'genre' => genre.id,
+      'author' => author.id,
+      'label' => label.id,
+      'source' => source.id
     }.to_json(*args)
   end
 
   def self.json_create(object)
-    objc = new(object['publish_date'], object['on_spotify'], object['id'], archived: object['archived'])
-    objc.add_genre('genre')
-    objc
+    obj = new(object['publish_date'], object['on_spotify'], object['id'], archived: object['archived'])
+    obj.genre = object['genre']
+    obj.author = object['author']
+    obj.label = object['label']
+    obj.source = object['source']
+    obj
   end
 
   private
