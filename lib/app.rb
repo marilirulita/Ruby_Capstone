@@ -1,4 +1,4 @@
-require_relative 'helpers'
+require_relative '/helpers/menu_options'
 
 class App
   def initialize
@@ -24,7 +24,7 @@ class App
       { id: 8, text: 'List all sources', method: 'list_all(@sources_list, "Sources")' },
       { id: 9, text: 'Add a book', method: 'add_element("Book")' },
       { id: 10, text: 'Add a music album', method: 'add_element("Music Album")' },
-      { id: 11, text: 'Add a movie', method: 'add_element("Movie")' },
+      { id: 11, text: 'Add a movie', method: 'add_element("Movie", @movies_list)' },
       { id: 12, text: 'Add a game', method: 'add_element("Game")' },
       { id: 13, text: 'Exit', method: 'exit' }
     ]
@@ -44,5 +44,7 @@ class App
     menu_options.map do |option|
       instance_eval(option[:method]) if op == option[:id]
     end
+
+    run
   end
 end

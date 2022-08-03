@@ -1,4 +1,4 @@
-require 'date'
+require_relative 'object_creation'
 
 def list_all(arr, label)
   puts "List of all #{label}"
@@ -13,8 +13,13 @@ def list_all(arr, label)
   end
 end
 
-def add_element(element)
-  puts "Here is the method to add element #{element}"
+def add_element(element, container)
+  case element
+  when 'Movie'
+    container << create_movie
+  else
+    raise NoMethodError, "There's no method for this option"
+  end
 end
 
 def exit
