@@ -1,4 +1,5 @@
 require_relative '../classes/movie'
+require_relative '../classes/music_album'
 require_relative '../classes/genre'
 require_relative '../classes/label'
 require_relative '../classes/author'
@@ -14,6 +15,17 @@ def create_movie(movie_id)
   item_setters(movies)
 
   movie
+end
+
+def create_music
+  id = generate_id
+  publish_date = ask_publish_date
+  archived = ask_archived
+  spotify = on_spotify?
+
+  album = MusicAlbum.new(publish_date, spotify, id, archived: archived)
+  item_setters(album)
+  album
 end
 
 def item_setters(item)
@@ -49,12 +61,19 @@ def ask_is_silet
   parse_response(response)
 end
 
+def on_spotify?
+  print 'Is this album on spotify?'
+  response = gets.chomp
+
+  parse_response(response)
+end
+
 def create_genre
   id = generate_id
-  print 'Genre: '
+  print 'Genre name: '
   name = gets.chomp
 
-  Genre.new(id, name)
+  Genre.new(name, id)
 end
 
 def create_source
@@ -72,7 +91,7 @@ def create_label
   print 'Color: '
   color = gets.chomp
 
-  Label.new(id, title, color)
+  Label.new(title, color, id)
 end
 
 def create_author
@@ -80,7 +99,7 @@ def create_author
   print 'First name: '
   name = gets.chomp
   print 'Last name: '
-  las_name = gets.chomp
+  last_name = gets.chomp
 
-  Author.new(id, name, las_name)
+  Author.new(id, name, last_name)
 end
