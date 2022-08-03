@@ -44,6 +44,5 @@ class App
     options.map do |option|
       instance_eval(option[:method]) if op == option[:id]
     end
-
   end
 end
