@@ -1,76 +1,48 @@
 require_relative 'helpers'
 
 class App
-  # rubocop:disable Metrics/MethodLength
   def initialize
-    @menu_options = [
-      'List all books',
-      'List all music albums',
-      'List all movies',
-      'List all games',
-      'List all genres',
-      'List all labels',
-      'List all authors',
-      'List all sources',
-      'Add a book',
-      'Add a music album',
-      'Add a movie',
-      'Add a game',
-      'Exit'
-    ]
     @books_list = []
     @music_list = []
     @movies_list = []
+    @games_list = []
     @genres_list = []
     @labels_list = []
     @authors_list = []
     @sources_list = []
   end
-  # rubocop:enable Metrics/MethodLength
+
+  def menu_options
+    [
+      { id: 1, text: 'List all books', method: 'list_all(@books_list, "Books")' },
+      { id: 2, text: 'List all music albums', method: 'list_all(@music_list, "Music")' },
+      { id: 3, text: 'List all movies', method: 'list_all(@movies_list, "Movies")' },
+      { id: 4, text: 'List all games', method: 'list_all(@games_list, "Games")' },
+      { id: 5, text: 'List all genres', method: 'list_all(@genres_list, "Genres")' },
+      { id: 6, text: 'List all labels', method: 'list_all(@labels_list, "Labels")' },
+      { id: 7, text: 'List all authors', method: 'list_all(@authors_list, "Authors")' },
+      { id: 8, text: 'List all sources', method: 'list_all(@sources_list, "Sources")' },
+      { id: 9, text: 'Add a book', method: 'add_element("Book")' },
+      { id: 10, text: 'Add a music album', method: 'add_element("Music Album")' },
+      { id: 11, text: 'Add a movie', method: 'add_element("Movie")' },
+      { id: 12, text: 'Add a game', method: 'add_element("Game")' },
+      { id: 13, text: 'Exit', method: 'exit' }
+    ]
+  end
 
   def show_menu
-    @menu_options.each_with_index do |option, index|
-      print "#{index + 1}) #{option} \n"
+    menu_options.each do |option|
+      print "#{option[:id]}) #{option[:text]} \n"
     end
   end
 
-  # rubocop:disable Metrics/CyclomaticComplexity
-  # rubocop:disable Metrics/MethodLength
   def run
     show_menu
     print 'Option: '
     op = gets.chomp.to_i
 
-    case op
-    when 1
-      print 'List all books'
-    when 2
-      print 'List all music albums'
-    when 3
-      print 'List all movies'
-    when 4
-      print 'List all games'
-    when 5
-      print 'List all genres'
-    when 6
-      print 'List all labels'
-    when 7
-      print 'List all authors'
-    when 8
-      print 'List all sources'
-    when 9
-      print 'Add a book'
-    when 10
-      print 'Add a music album'
-    when 11
-      print 'Add a movie'
-    when 12
-      print 'Add a game'
-    when 13
-      exit
-    else 'Choose a valid option'
+    menu_options.map do |option|
+      instance_eval(option[:method]) if op == option[:id]
     end
   end
-  # rubocop:enable Metrics/CyclomaticComplexity
-  # rubocop:enable Metrics/MethodLength
 end
