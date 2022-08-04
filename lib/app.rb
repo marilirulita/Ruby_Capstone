@@ -18,7 +18,7 @@ class App
       { id: 2, text: 'List all music albums', method: 'list_all(@music_list, "music_album")' },
       { id: 3, text: 'List all movies', method: 'list_all(@movies_list, "Movies")' },
       { id: 4, text: 'List all games', method: 'list_all(@games_list, "Games")' },
-      { id: 5, text: 'List all genres', method: 'list_all(@genres_list, "Genres")' },
+      { id: 5, text: 'List all genres', method: 'list_all_genre(@genres_list, "Genres")' },
       { id: 6, text: 'List all labels', method: 'list_all(@labels_list, "Labels")' },
       { id: 7, text: 'List all authors', method: 'list_all(@authors_list, "Authors")' },
       { id: 8, text: 'List all sources', method: 'list_all(@sources_list, "Sources")' },
@@ -31,6 +31,9 @@ class App
   end
 
   def show_menu
+    puts ""
+    puts "Please select one of the following:"
+    puts ""
     options.each do |option|
       print "#{option[:id]}) #{option[:text]} \n"
     end
@@ -38,7 +41,8 @@ class App
 
   def run
     show_menu
-    print 'Option: '
+    puts ""
+    print 'Option number: '
     op = gets.chomp.to_i
 
     if op.positive? && op <= options.length

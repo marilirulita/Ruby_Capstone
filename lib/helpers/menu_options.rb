@@ -4,6 +4,7 @@ require_relative 'preserve_data'
 def list_all(arr, label)
   data = load_data(arr, label)
 
+  puts ""
   puts "List of all #{label}"
   print 'title | author | genre | source'
   data.each_with_index do |item, index|
@@ -13,6 +14,19 @@ def list_all(arr, label)
     print "#{item.author.last_name} | "
     print "#{item.genre.name} | "
     print "#{item.source.name} \n"
+  end
+  run
+end
+
+def list_all_genre(arr, label)
+  data = load_data(arr, label)
+
+  puts ""
+  puts "List of all #{label}"
+  print 'id | name'
+  data.each_with_index do |item, index|
+    print (index + 1).to_s
+    print "#{item.name} | "
   end
   run
 end
