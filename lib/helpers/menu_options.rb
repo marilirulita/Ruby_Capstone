@@ -17,7 +17,7 @@ def list_all(arr, label)
   run
 end
 
-def list_all_genre(arr, label)
+def list_all_genre_source(arr, label)
   puts ''
   puts "List of all #{label}"
   puts 'id | name'
@@ -29,10 +29,30 @@ def list_all_genre(arr, label)
   run
 end
 
-def load_data(arr, file)
-  data = recover_data(file)
-  data = arr if data.nil?
-  data
+def list_all_label(arr, label)
+  puts ''
+  puts "List of all #{label}"
+  puts 'id | title | color'
+  puts '___________'
+  arr.each do |item|
+    print "#{item.id} | "
+    print "#{item.title} | "
+    print "#{item.color} \n"
+  end
+  run
+end
+
+def list_all_author(arr, label)
+  puts ''
+  puts "List of all #{label}"
+  puts 'id | name | last name'
+  puts '___________'
+  arr.each do |item|
+    print "#{item.id} | "
+    print "#{item.name} | "
+    print "#{item.last_name} \n"
+  end
+  run
 end
 
 def add_element(element, state)
@@ -65,7 +85,7 @@ end
 
 def add_music_album_to(state)
   music_album_id = generate_id_for(state[:music_list])
-  new_album = create_music(music_album_id)
+  new_album = create_music(music_album_id, state)
   state[:music_list] << new_album
   add_to_state(new_album, state)
 end
