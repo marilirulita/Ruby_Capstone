@@ -46,7 +46,7 @@ end
 
 def add_movie_to(state)
   movie_id = generate_id_for(state[:movies_list])
-  new_movie = create_movie(movie_id)
+  new_movie = create_movie(movie_id, state)
   state[:movies_list] << new_movie
   add_to_state(new_movie, state)
 end
