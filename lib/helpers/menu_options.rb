@@ -7,7 +7,6 @@ def list_all(arr, label, data)
   puts 'id | title | author | genre | source'
   puts '____________________________________'
   arr.each do |item|
-    add_missing_data(item, data)
     print "#{item.id} | "
     # print "#{item.label.title} | "
     # print "#{item.author.name} "
