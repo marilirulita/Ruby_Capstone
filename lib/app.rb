@@ -60,7 +60,7 @@ class App
   end
 
   def save_state
-    save_data(@state[:books_list], 'genres')
+    save_data(@state[:books_list], 'books')
     save_data(@state[:music_list], 'music_albums')
     save_data(@state[:movies_list], 'movies')
     save_data(@state[:games_list], 'games')
@@ -71,13 +71,15 @@ class App
   end
 
   def load_data
-    @state[:books_list] = recover_data('genres')
-    @state[:music_list] = recover_data('music_albums')
-    @state[:movies_list] = recover_data('movies')
-    @state[:games_list] = recover_data('games')
-    @state[:genres_list] = recover_data('genres')
-    @state[:labels_list] = recover_data('labels')
-    @state[:authors_list] = recover_data('authors')
-    @state[:sources_list] = recover_data('sources')
+    recover_data('books') == nil ? @state[:books_list] = []: @state[:books_list] = recover_data('books')
+    recover_data('music_albums') == nil ? @state[:music_list] = []: @state[:music_list] = recover_data('music_albums')
+    recover_data('movies') == nil ? @state[:movies_list] = []: @state[:movies_list] = recover_data('movies')
+    recover_data('games') == nil ? @state[:games_list] = []: @state[:games_list] = recover_data('games')
+    recover_data('genres') == nil ? @state[:genres_list] = []: @state[:genres_list] = recover_data('genres')
+    recover_data('labels') == nil ? @state[:labels_list] = []: @state[:labels_list] = recover_data('labels')
+    recover_data('authors') == nil ? @state[:authors_list] = []: @state[:authors_list] = recover_data('authors')
+    recover_data('sources') == nil ? @state[:sources_list] = []: @state[:sources_list] = recover_data('sources')
+
+    p @state
   end
 end
