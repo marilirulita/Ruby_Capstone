@@ -24,4 +24,13 @@ class Movie < Item
       'label' => @label.id
     }.to_json(*args)
   end
+
+  def self.json_create(object)
+    obj = new(object['publish_date'], object['id'], archived: object['archived'], silet: object['silet'])
+    obj.genre = object['genre']
+    obj.author = object['author']
+    obj.label = object['label']
+    obj.source = object['source']
+    obj
+  end
 end
