@@ -28,6 +28,7 @@ def add_element(element, container)
   when 'Movie'
     movie_id = generate_id(container)
     container << create_movie(movie_id)
+    save_data(container, 'movies')
   when 'Music Album'
     container << create_music
     save_data(container, 'music_album')
