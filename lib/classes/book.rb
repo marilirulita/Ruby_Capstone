@@ -25,18 +25,18 @@ class Book < Item
       label: @label.id,
       source: @source.id,
       author: @author.id,
-      genre: @genre.id,
+      genre: @genre.id
     }.to_json(*args)
   end
 
   def self.json_create(object)
-    obj = new(
-      object['publisher'],
-      object['cover_state'], 
-      object['publish_date'], 
-      archived: object['archived'], 
-      object['id'],
-    )
+    publisher = object['publisher']
+    cover_state = object['cover_state']
+    publish_date = object['publish_date']
+    archived = object['archived']
+    id = object['id']
+
+    obj = new(publisher, cover_state, publish_date, archived, id)
     obj.genre = object['genre']
     obj.author = object['author']
     obj.label = object['label']

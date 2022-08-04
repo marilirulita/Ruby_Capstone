@@ -19,7 +19,7 @@ class Author
       JSON.create_id => self.class.name,
       id: id,
       name: @name,
-      last_name: @last_name,
+      last_name: @last_name
     }.to_json(*args)
   end
 end

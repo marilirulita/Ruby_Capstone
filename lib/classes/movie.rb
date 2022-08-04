@@ -16,8 +16,8 @@ class Movie < Item
       'silet' => @silet,
       # inherited
       'id' => id,
-      'archived' => @archived
-      'publish_date' =>  @publish_date
+      'archived' => @archived,
+      'publish_date' => @publish_date,
       'genre' => @genre.to_json,
       'author' => @author.id,
       'source' => @source.id,
