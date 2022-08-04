@@ -22,8 +22,6 @@ class Genre
   end
 
   def self.json_create(object)
-    obj = new(object['name'], object['id'])
-    obj.items = object['items']
-    obj
+    new(object['name'], object['id'])
   end
 end
