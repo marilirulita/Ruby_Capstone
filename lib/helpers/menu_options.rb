@@ -52,9 +52,9 @@ def list_all_genre_source(arr, label)
   run
 end
 
-def list_all_label(arr, label)
+def list_all_label(arr)
   puts ''
-  puts "List of all #{label}"
+  puts "List of all Labes"
   puts 'id | title | color'
   puts '___________'
   arr.each do |item|
@@ -65,9 +65,9 @@ def list_all_label(arr, label)
   run
 end
 
-def list_all_author(arr, label)
+def list_all_author(arr)
   puts ''
-  puts "List of all #{label}"
+  puts "List of all Authors"
   puts 'id | name | last name'
   puts '___________'
   arr.each do |item|
