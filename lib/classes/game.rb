@@ -8,4 +8,10 @@ class Game < Item
     @multiplayer = multiplayer
     @last_played_at = Date.strptime(last_played_at, '%Y-%m-%d')
   end
+
+  private
+
+  def can_be_archived?
+    super && @last_played_at < Date.new(Date.today.year - 2, Date.today.month, Date.today.day)
+  end
 end
