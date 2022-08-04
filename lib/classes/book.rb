@@ -28,4 +28,19 @@ class Book < Item
       genre: @genre.id,
     }.to_json(*args)
   end
+
+  def self.json_create(object)
+    obj = new(
+      object['publisher'],
+      object['cover_state'], 
+      object['publish_date'], 
+      archived: object['archived'], 
+      object['id'],
+    )
+    obj.genre = object['genre']
+    obj.author = object['author']
+    obj.label = object['label']
+    obj.source = object['source']
+    obj
+  end
 end
