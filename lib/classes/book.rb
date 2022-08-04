@@ -19,12 +19,12 @@ class Book < Item
       publisher: @publisher,
       cover_state: @cover_state,
       publish_date: publish_date,
-      archived: archived
-      label_id:@label.id,
-      source:@source.id,
-      author:@author.id,
-      genre:@genre.id,
+      archived: archived,
+      label: @label.id,
+      source: @source.id,
+      author: @author.id,
+      genre: @genre.id,
       JSON.create_id => self.class.name
-    }.to_json
+    }.to_json(*args)
   end
 end
