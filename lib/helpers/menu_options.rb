@@ -1,18 +1,18 @@
 require_relative 'object_creation'
 require_relative 'preserve_data'
 
-def list_all(arr, label, data)
+def list_all(arr, label)
   puts ''
   puts "List of all #{label}"
   puts 'id | title | author | genre | source'
   puts '____________________________________'
   arr.each do |item|
     print "#{item.id} | "
-    # print "#{item.label.title} | "
-    # print "#{item.author.name} "
-    # print "#{item.author.last_name} | "
+    print "#{item.label.title} | "
+    print "#{item.author.name} "
+    print "#{item.author.last_name} | "
     print "#{item.genre.name} | "
-    # print "#{item.source.name} \n"
+    print "#{item.source.name} \n"
   end
   run
 end
