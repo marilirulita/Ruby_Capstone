@@ -54,7 +54,7 @@ end
 
 def list_all_label(arr)
   puts ''
-  puts "List of all Labes"
+  puts 'List of all Labes'
   puts 'id | title | color'
   puts '___________'
   arr.each do |item|
@@ -67,7 +67,7 @@ end
 
 def list_all_author(arr)
   puts ''
-  puts "List of all Authors"
+  puts 'List of all Authors'
   puts 'id | name | last name'
   puts '___________'
   arr.each do |item|
