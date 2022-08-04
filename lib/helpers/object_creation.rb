@@ -89,7 +89,7 @@ def create_source(state)
   print 'Source name: '
   name = gets.chomp
 
-  Source.new(id, name)
+  Source.new(name, id)
 end
 
 def create_label(state)
@@ -109,5 +109,5 @@ def create_author(state)
   print 'Author last name: '
   last_name = gets.chomp
 
-  Author.new(id, name, last_name)
+  Author.new(name, last_name, id)
 end
