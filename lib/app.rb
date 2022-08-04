@@ -1,15 +1,9 @@
 require_relative './helpers/menu_options'
+require_relative './classes/app_state'
 
 class App
   def initialize
-    @books_list = []
-    @music_list = []
-    @movies_list = []
-    @games_list = []
-    @genres_list = []
-    @labels_list = []
-    @authors_list = []
-    @sources_list = []
+    @state = AppState.new
   end
 
   def options

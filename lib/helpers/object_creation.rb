@@ -12,7 +12,7 @@ def create_movie(movie_id)
   silet = ask_is_silet
 
   movie = Movie.new(publish_date, id, archived: archived, silet: silet)
-  item_setters(movies)
+  item_setters(movie)
 
   movie
 end
