@@ -15,6 +15,7 @@ class Book < Item
 
   def to_json(*args)
     {
+      JSON.create_id => self.class.name,
       id: id,
       publisher: @publisher,
       cover_state: @cover_state,
@@ -23,8 +24,7 @@ class Book < Item
       label: @label.id,
       source: @source.id,
       author: @author.id,
-      genre: @genre.id,
-      JSON.create_id => self.class.name
+      genre: @genre.id
     }.to_json(*args)
   end
 end
