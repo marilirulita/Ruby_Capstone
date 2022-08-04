@@ -60,13 +60,24 @@ class App
   end
 
   def save_state
-    save_data(state[:books_list], 'genres')
-    save_data(state[:music_list], 'music_albums')
-    save_data(state[:movies_list], 'movies')
-    save_data(state[:games_list], 'games')
-    save_data(state[:genres_list], 'genres')
-    save_data(state[:labels_list], 'labels')
-    save_data(state[:authors_list], 'authors')
-    save_data(state[:sources_list], 'sources')
+    save_data(@state[:books_list], 'genres')
+    save_data(@state[:music_list], 'music_albums')
+    save_data(@state[:movies_list], 'movies')
+    save_data(@state[:games_list], 'games')
+    save_data(@state[:genres_list], 'genres')
+    save_data(@state[:labels_list], 'labels')
+    save_data(@state[:authors_list], 'authors')
+    save_data(@state[:sources_list], 'sources')
+  end
+
+  def load_data
+    @state[:books_list] = recover_data('genres')
+    @state[:music_list] = recover_data('music_albums')
+    @state[:movies_list] = recover_data('movies')
+    @state[:games_list] = recover_data('games')
+    @state[:genres_list] = recover_data('genres')
+    @state[:labels_list] = recover_data('labels')
+    @state[:authors_list] = recover_data('authors')
+    @state[:sources_list] = recover_data('sources')
   end
 end
