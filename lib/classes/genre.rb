@@ -27,5 +27,4 @@ class Genre
     obj.items = object['items']
     obj
   end
-
 end

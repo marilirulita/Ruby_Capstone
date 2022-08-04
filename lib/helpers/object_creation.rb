@@ -20,7 +20,7 @@ def create_movie(movie_id)
 end
 
 def create_music
-  puts "Great, we can create an new music album"
+  puts 'Great, we can create an new music album'
   id = rand(1..1000)
   publish_date = ask_publish_date
   archived = ask_archived
@@ -32,31 +32,31 @@ def create_music
 end
 
 def item_setters(item)
-  puts "Please select the author info"
+  puts 'Please select the author info'
   author = create_author
   item.add_author(author)
 
-  puts "Please select genre info"
+  puts 'Please select genre info'
   genre = create_genre
   item.add_genre(genre)
 
-  puts "Please select source info"
+  puts 'Please select source info'
   source = create_source
   item.add_source(source)
 
-  puts "Please select label info"
+  puts 'Please select label info'
   label = create_label
   item.add_label(label)
 end
 
 def ask_publish_date
-  puts "Type publish date"
+  puts 'Type publish date'
   print 'Publish date [yyyy-mm-dd]: '
   gets.chomp
 end
 
 def ask_archived
-  puts "Select if is already archived"
+  puts 'Select if is already archived'
   print 'Is archived? [Yy/Nn]: '
   response = gets.chomp
 

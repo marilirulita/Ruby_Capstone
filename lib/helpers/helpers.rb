@@ -21,4 +21,3 @@ def generate_id(container)
   end
   new_id
 end
-

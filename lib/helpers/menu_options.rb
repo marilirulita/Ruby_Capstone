@@ -2,7 +2,7 @@ require_relative 'object_creation'
 require_relative 'preserve_data'
 
 def list_all(arr, label)
-  puts ""
+  puts ''
   puts "List of all #{label}"
   puts 'id | title | author | genre | source'
   puts '____________________________________'
@@ -18,7 +18,7 @@ def list_all(arr, label)
 end
 
 def list_all_genre(arr, label)
-  puts ""
+  puts ''
   puts "List of all #{label}"
   puts 'id | name'
   puts '___________'

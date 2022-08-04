@@ -31,9 +31,9 @@ class App
   end
 
   def show_menu
-    puts ""
-    puts "Please select one of the following:"
-    puts ""
+    puts ''
+    puts 'Please select one of the following:'
+    puts ''
     options.each do |option|
       print "#{option[:id]}) #{option[:text]} \n"
     end
@@ -41,7 +41,7 @@ class App
 
   def run
     show_menu
-    puts ""
+    puts ''
     print 'Option number: '
     op = gets.chomp.to_i
 
