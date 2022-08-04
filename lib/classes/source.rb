@@ -2,7 +2,7 @@ class Source
   attr_accessor :name, :items
   attr_reader :id
 
-  def initialize(id, name)
+  def initialize(id = rand(1..1000), name)
     @id = id
     @name = name
     @items = []
