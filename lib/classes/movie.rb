@@ -12,7 +12,7 @@ class Movie < Item
 
   def to_json(*_args)
     {
-      JSON.create_id => self.class.name
+      JSON.create_id => self.class.name,
       'id' => id,
       'genre_id' => @genre.to_json,
       'author_id' => @author.id,
