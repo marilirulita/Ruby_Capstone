@@ -15,7 +15,7 @@ class App
   def options
     [
       { id: 1, text: 'List all books', method: 'list_all(@books_list, "Books")' },
-      { id: 2, text: 'List all music albums', method: 'list_all(@music_list, "music_album")' },
+      { id: 2, text: 'List all music albums', method: 'list_all(@music_list, "Music Album")' },
       { id: 3, text: 'List all movies', method: 'list_all(@movies_list, "Movies")' },
       { id: 4, text: 'List all games', method: 'list_all(@games_list, "Games")' },
       { id: 5, text: 'List all genres', method: 'list_all_genre(@genres_list, "Genres")' },

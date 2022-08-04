@@ -2,13 +2,11 @@ require_relative 'object_creation'
 require_relative 'preserve_data'
 
 def list_all(arr, label)
-  data = load_data(arr, label)
-
   puts ""
   puts "List of all #{label}"
   print 'title | author | genre | source'
-  data.each_with_index do |item, index|
-    print (index + 1).to_s
+  arr.each_with_index do |item, index|
+    puts (index + 1).to_s
     print "#{item.label.title} | "
     print "#{item.author.first_name} "
     print "#{item.author.last_name} | "
@@ -19,12 +17,10 @@ def list_all(arr, label)
 end
 
 def list_all_genre(arr, label)
-  data = load_data(arr, label)
-
   puts ""
   puts "List of all #{label}"
   print 'id | name'
-  data.each_with_index do |item, index|
+  arr.each_with_index do |item, index|
     print (index + 1).to_s
     print "#{item.name} | "
   end
@@ -44,7 +40,7 @@ def add_element(element, container)
     container << create_movie(movie_id)
   when 'Music Album'
     container << create_music
-    save_data(container, 'music_album')
+    #save_data(container, 'music_album')
   else
     raise NoMethodError, "There's no method for this option"
   end
