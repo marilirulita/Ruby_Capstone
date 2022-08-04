@@ -20,10 +20,11 @@ end
 def list_all_genre(arr, label)
   puts ""
   puts "List of all #{label}"
-  print 'id | name'
-  arr.each_with_index do |item, index|
-    print (index + 1).to_s
-    print "#{item.name} | "
+  puts 'id | name'
+  puts '___________'
+  arr.each do |item|
+    print "#{item.id} | "
+    print "#{item.name} \n"
   end
   run
 end
@@ -41,7 +42,7 @@ def add_element(element, container)
     container << create_movie(movie_id)
   when 'Music Album'
     container << create_music
-    #save_data(container, 'music_album')
+    save_data(container, 'music_album')
   else
     raise NoMethodError, "There's no method for this option"
   end
