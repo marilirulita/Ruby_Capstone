@@ -12,9 +12,10 @@ class MusicAlbum < Item
   def to_json(*args)
     {
       JSON.create_id => self.class.name,
-      'publish_date' => publish_date,
       'on_spotify' => on_spotify,
+      # inherited
       'id' => id,
+      'publish_date' => publish_date,
       'archived' => @archived,
       'genre' => genre.id,
       'author' => author.id,

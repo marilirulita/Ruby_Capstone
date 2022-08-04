@@ -13,12 +13,15 @@ class Movie < Item
   def to_json(*_args)
     {
       JSON.create_id => self.class.name,
+      'silet' => @silet,
+      # inherited
       'id' => id,
-      'genre_id' => @genre.to_json,
-      'author_id' => @author.id,
-      'source_id' => @source.id,
-      'label_id' => @label.id,
-      'silet' => @silet
+      'archived' => @archived
+      'publish_date' =>  @publish_date
+      'genre' => @genre.to_json,
+      'author' => @author.id,
+      'source' => @source.id,
+      'label' => @label.id
     }.to_json(*args)
   end
 end
