@@ -17,14 +17,14 @@ class App
 
   def options
     [
-      { id: 1, text: 'List all books', method: 'list_all(@state[:books_list], "Books")' },
-      { id: 2, text: 'List all music albums', method: 'list_all(@state[:music_list], "music_album")' },
-      { id: 3, text: 'List all movies', method: 'list_all(@state[:movies_list], "Movies")' },
-      { id: 4, text: 'List all games', method: 'list_all(@state[:games_list], "Games")' },
-      { id: 5, text: 'List all genres', method: 'list_all(@state[:genres_list], "Genres")' },
-      { id: 6, text: 'List all labels', method: 'list_all(@state[:labels_list], "Labels")' },
-      { id: 7, text: 'List all authors', method: 'list_all(@state[:authors_list], "Authors")' },
-      { id: 8, text: 'List all sources', method: 'list_all(@state[:sources_list], "Sources")' },
+      { id: 1, text: 'List all books', method: 'list_all(@state[:books_list], "Books", @state)' },
+      { id: 2, text: 'List all music albums', method: 'list_all(@state[:music_list], "Music Album", @state)' },
+      { id: 3, text: 'List all movies', method: 'list_all(@state[:movies_list], "Movies", @state)' },
+      { id: 4, text: 'List all games', method: 'list_all(@state[:games_list], "Games", @state)' },
+      { id: 5, text: 'List all genres', method: 'list_all_genre_source(@state[:genres_list], "Genres")' },
+      { id: 6, text: 'List all labels', method: 'list_all_label(@state[:labels_list], "Labels")' },
+      { id: 7, text: 'List all authors', method: 'list_all_author(@state[:authors_list], "Authors")' },
+      { id: 8, text: 'List all sources', method: 'list_all_genre_source(@state[:sources_list], "Sources")' },
       { id: 9, text: 'Add a book', method: 'add_element("Book")' },
       { id: 10, text: 'Add a music album', method: 'add_element("Music Album", @state)' },
       { id: 11, text: 'Add a movie', method: 'add_element("Movie", @state)' },
@@ -34,6 +34,9 @@ class App
   end
 
   def show_menu
+    puts ''
+    puts 'Please select one of the following:'
+    puts ''
     options.each do |option|
       print "#{option[:id]}) #{option[:text]} \n"
     end
@@ -41,7 +44,8 @@ class App
 
   def run
     show_menu
-    print 'Option: '
+    puts ''
+    print 'Option number: '
     op = gets.chomp.to_i
 
     if op.positive? && op <= options.length
@@ -56,13 +60,28 @@ class App
   end
 
   def save_state
-    save_data(state[:books_list], 'genres')
-    save_data(state[:music_list], 'music_albums')
-    save_data(state[:movies_list], 'movies')
-    save_data(state[:games_list], 'games')
-    save_data(state[:genres_list], 'genres')
-    save_data(state[:labels_list], 'labels')
-    save_data(state[:authors_list], 'authors')
-    save_data(state[:sources_list], 'sources')
+    save_data(@state[:books_list], 'books_list')
+    save_data(@state[:music_list], 'music_list')
+    save_data(@state[:movies_list], 'movies_list')
+    save_data(@state[:games_list], 'games_list')
+    save_data(@state[:genres_list], 'genres_list')
+    save_data(@state[:labels_list], 'labels_list')
+    save_data(@state[:authors_list], 'authors_list')
+    save_data(@state[:sources_list], 'sources_list')
+  end
+
+  def load_data
+    elemnts = %i[books_list
+                 music_list
+                 movies_list
+                 games_list
+                 genres_list
+                 labels_list
+                 authors_list
+                 sources_list]
+
+    elemnts.each do |ele|
+      @state[ele] = recover_data(ele.to_s).nil? ? [] : recover_data(ele.to_s)
+    end
   end
 end

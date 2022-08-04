@@ -8,7 +8,7 @@ describe Source do
     movie_id = generate_id_for([])
     movie = Movie.new(publish_date, movie_id, archived: false, silet: false)
     source_id = generate_id_for([])
-    source = Source.new(source_id, 'Online shop')
+    source = Source.new('Online shop', source_id)
     movie.add_source(source)
 
     movie_source_name = movie.source.name
