@@ -9,6 +9,21 @@ class Game < Item
     @last_played_at = Date.strptime(last_played_at, '%Y-%m-%d')
   end
 
+  def to_json(*args)
+    {
+      JSON.create_id => self.class.name,
+      'id' => id,
+      'multiplayer' => @multiplayer,
+      'last_played_at' => @last_played_at,
+      'publish_date' => publish_date,
+      'genre_id' => @genre.to_json,
+      'author_id' => @author.id,
+      'source_id' => @source.id,
+      'label_id' => @label.id,
+      'archived' => archived
+    }.to_json(*args)
+  end
+
   private
 
   def can_be_archived?
