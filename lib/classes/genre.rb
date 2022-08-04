@@ -16,9 +16,8 @@ class Genre
   def to_json(*args)
     {
       JSON.create_id => self.class.name,
-      'name' => name,
-      'id' => id,
-      'items' => @items
+      'name' => @name,
+      'id' => @id
     }.to_json(*args)
   end
 
