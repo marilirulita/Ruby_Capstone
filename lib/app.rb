@@ -18,10 +18,10 @@ class App
   def options
     [
       # items
-      { id: 1, text: 'List all books', method: 'list_all(@state[:books_list], "Books", @state)' },
-      { id: 2, text: 'List all music albums', method: 'list_all(@state[:music_list], "Music Album", @state)' },
-      { id: 3, text: 'List all movies', method: 'list_all(@state[:movies_list], "Movies", @state)' },
-      { id: 4, text: 'List all games', method: 'list_all(@state[:games_list], "Games", @state)' },
+      { id: 1, text: 'List all books', method: 'list_all(@state[:books_list], "Books")' },
+      { id: 2, text: 'List all music albums', method: 'list_all(@state[:music_list], "Music Album")' },
+      { id: 3, text: 'List all movies', method: 'list_all(@state[:movies_list], "Movies")' },
+      { id: 4, text: 'List all games', method: 'list_all(@state[:games_list], "Games")' },
       # tags
       { id: 5, text: 'List all genres', method: 'list_all_genre(@state[:genres_list])' },
       { id: 6, text: 'List all labels', method: 'list_all_label(@state[:labels_list])' },
