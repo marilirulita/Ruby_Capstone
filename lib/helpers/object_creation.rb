@@ -7,45 +7,44 @@ require_relative '../classes/author'
 require_relative '../classes/source'
 require_relative 'helpers'
 
-def create_movie(movie_id)
+def create_movie(movie_id, state)
   id = movie_id
   publish_date = ask_publish_date
   archived = ask_archived
   silet = ask_is_silet
 
   movie = Movie.new(publish_date, id, archived: archived, silet: silet)
-  item_setters(movies)
+  item_setters(movie, state)
 
   movie
 end
 
-def create_music
-  puts 'Great, we can create an new music album'
-  id = rand(1..1000)
+def create_music(music_id, state)
+  id = music_id
   publish_date = ask_publish_date
   archived = ask_archived
   spotify = on_spotify?
 
   album = MusicAlbum.new(publish_date, spotify, id, archived: archived)
-  item_setters(album)
+  item_setters(album, state)
   album
 end
 
-def item_setters(item)
+def item_setters(item, state)
   puts 'Please select the author info'
-  author = create_author
+  author = create_author(state)
   item.add_author(author)
 
   puts 'Please select genre info'
-  genre = create_genre
+  genre = create_genre(state)
   item.add_genre(genre)
 
   puts 'Please select source info'
-  source = create_source
+  source = create_source(state)
   item.add_source(source)
 
   puts 'Please select label info'
-  label = create_label
+  label = create_label(state)
   item.add_label(label)
 end
 
@@ -77,37 +76,37 @@ def on_spotify?
   parse_response(response)
 end
 
-def create_genre
-  id = rand(1..1000)
+def create_genre(state)
+  id = generate_id_for(state[:genres_list])
   print 'Genre name: '
   name = gets.chomp
 
   Genre.new(name, id)
 end
 
-def create_source
-  id = rand(1..1000)
+def create_source(state)
+  id = generate_id_for(state[:sources_list])
   print 'Source name: '
   name = gets.chomp
 
   Source.new(id, name)
 end
 
-def create_label
-  id = rand(1..1000)
-  print 'Title: '
+def create_label(state)
+  id = generate_id_for(state[:labels_list])
+  print 'Label title: '
   title = gets.chomp
-  print 'Color: '
+  print 'Label color: '
   color = gets.chomp
 
   Label.new(title, color, id)
 end
 
-def create_author
-  id = rand(1..1000)
-  print 'First name: '
+def create_author(state)
+  id = generate_id_for(state[:authors_list])
+  print 'Author first name: '
   name = gets.chomp
-  print 'Last name: '
+  print 'Author last name: '
   last_name = gets.chomp
 
   Author.new(id, name, last_name)
