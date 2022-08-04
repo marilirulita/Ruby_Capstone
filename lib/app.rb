@@ -60,26 +60,24 @@ class App
   end
 
   def save_state
-    save_data(@state[:books_list], 'books')
-    save_data(@state[:music_list], 'music_albums')
-    save_data(@state[:movies_list], 'movies')
-    save_data(@state[:games_list], 'games')
-    save_data(@state[:genres_list], 'genres')
-    save_data(@state[:labels_list], 'labels')
-    save_data(@state[:authors_list], 'authors')
-    save_data(@state[:sources_list], 'sources')
+    save_data(@state[:books_list], 'books_list')
+    save_data(@state[:music_list], 'music_list')
+    save_data(@state[:movies_list], 'movies_list')
+    save_data(@state[:games_list], 'games_list')
+    save_data(@state[:genres_list], 'genres_list')
+    save_data(@state[:labels_list], 'labels_list')
+    save_data(@state[:authors_list], 'authors_list')
+    save_data(@state[:sources_list], 'sources_list')
   end
 
   def load_data
-    recover_data('books') == nil ? @state[:books_list] = []: @state[:books_list] = recover_data('books')
-    recover_data('music_albums') == nil ? @state[:music_list] = []: @state[:music_list] = recover_data('music_albums')
-    recover_data('movies') == nil ? @state[:movies_list] = []: @state[:movies_list] = recover_data('movies')
-    recover_data('games') == nil ? @state[:games_list] = []: @state[:games_list] = recover_data('games')
-    recover_data('genres') == nil ? @state[:genres_list] = []: @state[:genres_list] = recover_data('genres')
-    recover_data('labels') == nil ? @state[:labels_list] = []: @state[:labels_list] = recover_data('labels')
-    recover_data('authors') == nil ? @state[:authors_list] = []: @state[:authors_list] = recover_data('authors')
-    recover_data('sources') == nil ? @state[:sources_list] = []: @state[:sources_list] = recover_data('sources')
-
-    p @state
+    # @state[:books_list] = recover_data('books_list').nil? ? [] : recover_data('books_list')
+    # @state[:music_list] = recover_data('music_list').nil? ? [] : recover_data('music_list')
+    # @state[:movies_list] = recover_data('movies_list').nil? ? [] : recover_data('movies_list')
+    # @state[:games_list] = recover_data('games_list').nil? ? [] : recover_data('games_list')
+    # @state[:genres_list] = recover_data('genres_list').nil? ? [] : recover_data('genres_list')
+    # @state[:labels_list] = recover_data('labels_list').nil? ? [] : recover_data('labels_list')
+    # @state[:authors_list] = recover_data('authors_list').nil? ? [] : recover_data('authors_list')
+    # @state[:sources_list] = recover_data('sources_list').nil? ? [] : recover_data('sources_list')
   end
 end
