@@ -71,13 +71,17 @@ class App
   end
 
   def load_data
-    # @state[:books_list] = recover_data('books_list').nil? ? [] : recover_data('books_list')
-    # @state[:music_list] = recover_data('music_list').nil? ? [] : recover_data('music_list')
-    # @state[:movies_list] = recover_data('movies_list').nil? ? [] : recover_data('movies_list')
-    # @state[:games_list] = recover_data('games_list').nil? ? [] : recover_data('games_list')
-    # @state[:genres_list] = recover_data('genres_list').nil? ? [] : recover_data('genres_list')
-    # @state[:labels_list] = recover_data('labels_list').nil? ? [] : recover_data('labels_list')
-    # @state[:authors_list] = recover_data('authors_list').nil? ? [] : recover_data('authors_list')
-    # @state[:sources_list] = recover_data('sources_list').nil? ? [] : recover_data('sources_list')
+    elemnts = %i[books_list
+                 music_list
+                 movies_list
+                 games_list
+                 genres_list
+                 labels_list
+                 authors_list
+                 sources_list]
+
+    elemnts.each do |ele|
+      @state[ele] = recover_data(ele.to_s).nil? ? [] : recover_data(ele.to_s)
+    end
   end
 end
