@@ -1,19 +1,19 @@
 require_relative 'object_creation'
 require_relative 'preserve_data'
 
-def list_all(arr, label, data)
+def list_all(arr, label)
   puts ''
   puts "List of all #{label}"
-  puts 'id | title | author | genre | source'
+  puts 'id | label | author | genre | source'
   puts '____________________________________'
   arr.each do |item|
-    add_missing_data(item, data)
     print "#{item.id} | "
-    # print "#{item.label.title} | "
-    # print "#{item.author.name} "
-    # print "#{item.author.last_name} | "
+    print "[#{item.label.color}] "
+    print "#{item.label.title} | "
+    print "#{item.author.name} "
+    print "#{item.author.last_name} | "
     print "#{item.genre.name} | "
-    # print "#{item.source.name} \n"
+    print "#{item.source.name} \n"
   end
   run
 end
@@ -40,7 +40,7 @@ def add_missing_data(item, data)
   # item.add_source(sourceobj[0])
 end
 
-def list_all_genre_source(arr, label)
+def list_all_genres_sources(arr, label)
   puts ''
   puts "List of all #{label}"
   puts 'id | name'
@@ -54,7 +54,7 @@ end
 
 def list_all_label(arr)
   puts ''
-  puts 'List of all Labes'
+  puts 'List of all labels'
   puts 'id | title | color'
   puts '___________'
   arr.each do |item|
@@ -67,7 +67,7 @@ end
 
 def list_all_author(arr)
   puts ''
-  puts 'List of all Authors'
+  puts 'List of all authors'
   puts 'id | name | last name'
   puts '___________'
   arr.each do |item|

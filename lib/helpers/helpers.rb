@@ -9,6 +9,8 @@ def generate_id_for(container)
   new_id_found = false
   new_id = 0
 
+  return rand(1...1000) if container.empty?
+
   until new_id_found
     new_id = rand(1...1000)
     new_id_found = true
