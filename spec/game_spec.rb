@@ -23,4 +23,23 @@ describe Game do
       expect(archivable).to eq(false)
     end
   end
+
+  context 'Recently Played Single Player Game - More than 10 Years Old' do
+    before :each do
+      @game_two = Game.new(false, '2022-08-02', '2010-01-05', false)
+    end
+
+    it 'Expects game not to be a multiplayer game' do
+      expect(@game_two.multiplayer).to eq(false)
+    end
+
+    it 'Expects game not to be archived' do
+      expect(@game_two.archived).to eq(false)
+    end
+
+    it 'Expects game played within 2 years not to be archivable' do
+      archivable = @game_two.send(:can_be_archived?)
+      expect(archivable).to eq(false)
+    end
+  end
 end
