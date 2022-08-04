@@ -21,4 +21,8 @@ class Label
       items: @items
     }.to_json
   end
+
+  def self.json_create(object)
+    new(object['title'], object['color'], object['id'])
+  end
 end
