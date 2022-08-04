@@ -40,7 +40,7 @@ def add_missing_data(item, data)
   # item.add_source(sourceobj[0])
 end
 
-def list_all_genre_source(arr)
+def list_all_genre(arr)
   puts ''
   puts 'List of all genres'
   puts 'id | name'
