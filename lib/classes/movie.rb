@@ -18,7 +18,7 @@ class Movie < Item
       'id' => id,
       'archived' => @archived,
       'publish_date' => @publish_date,
-      'genre' => @genre.to_json,
+      'genre' => @genre.id,
       'author' => @author.id,
       'source' => @source.id,
       'label' => @label.id
