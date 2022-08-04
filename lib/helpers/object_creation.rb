@@ -17,8 +17,8 @@ def create_movie(movie_id)
   movie
 end
 
-def create_music
-  id = generate_id_for
+def create_music(music_id)
+  id = music_id
   publish_date = ask_publish_date
   archived = ask_archived
   spotify = on_spotify?
