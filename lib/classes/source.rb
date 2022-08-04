@@ -17,7 +17,7 @@ class Source
     {
       JSON.create_id => self.class.name,
       'name' => name,
-      'id' => id,
+      'id' => id
     }.to_json(*args)
   end
 end

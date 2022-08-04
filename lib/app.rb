@@ -4,14 +4,14 @@ require_relative './helpers/preserve_data'
 class App
   def initialize
     @state = {
-      books_list: = []
-      music_list: = []
-      movies_list: = []
-      games_list: = []
-      genres_list: = []
-      labels_list: = []
-      authors_list: = []
-      sources_list: = []
+      books_list: [],
+      music_list: [],
+      movies_list: [],
+      games_list: [],
+      genres_list: [],
+      labels_list: [],
+      authors_list: [],
+      sources_list: []
     }
   end
 
