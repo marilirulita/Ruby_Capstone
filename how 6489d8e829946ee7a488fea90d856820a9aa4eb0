@@ -259,7 +259,7 @@ Date:   Tue Aug 2 16:02:09 2022 -0500
 Author: Trictonicmp <code_shadow@hotmail.com>
 Date:   Tue Aug 2 15:24:58 2022 -0500
 
-    Add generate_id function
+    Add generate_id_for function
 
 [33mcommit 31b5afe21421b5aa96d68e98307687cd34c3d614[m
 Author: Trictonicmp <code_shadow@hotmail.com>

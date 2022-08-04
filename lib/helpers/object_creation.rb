@@ -18,7 +18,7 @@ def create_movie(movie_id)
 end
 
 def create_music
-  id = generate_id
+  id = generate_id_for
   publish_date = ask_publish_date
   archived = ask_archived
   spotify = on_spotify?
@@ -69,7 +69,7 @@ def on_spotify?
 end
 
 def create_genre
-  id = generate_id
+  id = generate_id_for
   print 'Genre name: '
   name = gets.chomp
 
@@ -77,7 +77,7 @@ def create_genre
 end
 
 def create_source
-  id = generate_id
+  id = generate_id_for
   print 'Source: '
   name = gets.chomp
 
@@ -85,7 +85,7 @@ def create_source
 end
 
 def create_label
-  id = generate_id
+  id = generate_id_for
   print 'Title: '
   title = gets.chomp
   print 'Color: '
@@ -95,7 +95,7 @@ def create_label
 end
 
 def create_author
-  id = generate_id
+  id = generate_id_for
   print 'First name: '
   name = gets.chomp
   print 'Last name: '

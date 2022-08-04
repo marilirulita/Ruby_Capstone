@@ -5,7 +5,7 @@ def parse_response(response)
   is_data_ok
 end
 
-def generate_id(container)
+def generate_id_for(container)
   new_id_found = false
   new_id = 0
 
