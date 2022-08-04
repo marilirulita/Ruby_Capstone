@@ -86,5 +86,23 @@ class App
     elemnts.each do |ele|
       @state[ele] = recover_data(ele.to_s).nil? ? [] : recover_data(ele.to_s)
     end
+    # print @state[:genres_list]
+
+    link_classes
+  end
+
+  def link_classes
+    @state[:books_list].each do |item|
+      add_missing_data(item, @state)
+    end
+    @state[:movies_list].each do |item|
+      add_missing_data(item, @state)
+    end
+    @state[:games_list].each do |item|
+      add_missing_data(item, @state)
+    end
+    @state[:music_list].each do |item|
+      add_missing_data(item, @state)
+    end
   end
 end
