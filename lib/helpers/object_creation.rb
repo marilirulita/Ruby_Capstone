@@ -5,8 +5,8 @@ require_relative '../classes/label'
 require_relative '../classes/author'
 require_relative 'helpers'
 
-def create_movie
-  id = generate_id
+def create_movie(movie_id)
+  id = movie_id
   publish_date = ask_publish_date
   archived = ask_archived
   silet = ask_is_silet
