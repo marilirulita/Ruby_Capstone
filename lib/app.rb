@@ -23,10 +23,10 @@ class App
       { id: 3, text: 'List all movies', method: 'list_all(@state[:movies_list], "Movies")' },
       { id: 4, text: 'List all games', method: 'list_all(@state[:games_list], "Games")' },
       # tags
-      { id: 5, text: 'List all genres', method: 'list_all_genre(@state[:genres_list])' },
+      { id: 5, text: 'List all genres', method: 'list_all_genres_sources(@state[:genres_list], "genres")' },
       { id: 6, text: 'List all labels', method: 'list_all_label(@state[:labels_list])' },
       { id: 7, text: 'List all authors', method: 'list_all_author(@state[:authors_list])' },
-      { id: 8, text: 'List all sources', method: 'list_all_genre_source(@state[:sources_list])' },
+      { id: 8, text: 'List all sources', method: 'list_all_genres_sources(@state[:sources_list], "sources")' },
       # add
       { id: 9, text: 'Add a book', method: 'add_element("Book")' },
       { id: 10, text: 'Add a music album', method: 'add_element("Music Album", @state)' },
