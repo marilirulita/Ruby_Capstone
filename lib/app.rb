@@ -17,14 +17,17 @@ class App
 
   def options
     [
+      # items
       { id: 1, text: 'List all books', method: 'list_all(@state[:books_list], "Books", @state)' },
       { id: 2, text: 'List all music albums', method: 'list_all(@state[:music_list], "Music Album", @state)' },
       { id: 3, text: 'List all movies', method: 'list_all(@state[:movies_list], "Movies", @state)' },
       { id: 4, text: 'List all games', method: 'list_all(@state[:games_list], "Games", @state)' },
+      # tags
       { id: 5, text: 'List all genres', method: 'list_all_genre_source(@state[:genres_list], "Genres")' },
       { id: 6, text: 'List all labels', method: 'list_all_label(@state[:labels_list], "Labels")' },
       { id: 7, text: 'List all authors', method: 'list_all_author(@state[:authors_list], "Authors")' },
       { id: 8, text: 'List all sources', method: 'list_all_genre_source(@state[:sources_list], "Sources")' },
+      # add
       { id: 9, text: 'Add a book', method: 'add_element("Book")' },
       { id: 10, text: 'Add a music album', method: 'add_element("Music Album", @state)' },
       { id: 11, text: 'Add a movie', method: 'add_element("Movie", @state)' },
