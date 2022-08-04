@@ -63,14 +63,14 @@ class App
   end
 
   def save_state
-    # save_data(@state[:books_list], 'books_list')
-    # save_data(@state[:music_list], 'music_list')
+    save_data(@state[:books_list], 'books_list')
+    save_data(@state[:music_list], 'music_list')
     save_data(@state[:movies_list], 'movies_list')
-    # save_data(@state[:games_list], 'games_list')
-    # save_data(@state[:genres_list], 'genres_list')
-    # save_data(@state[:labels_list], 'labels_list')
-    # save_data(@state[:authors_list], 'authors_list')
-    # save_data(@state[:sources_list], 'sources_list')
+    save_data(@state[:games_list], 'games_list')
+    save_data(@state[:genres_list], 'genres_list')
+    save_data(@state[:labels_list], 'labels_list')
+    save_data(@state[:authors_list], 'authors_list')
+    save_data(@state[:sources_list], 'sources_list')
   end
 
   def load_data
