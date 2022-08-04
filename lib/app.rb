@@ -63,14 +63,14 @@ class App
   end
 
   def save_state
-    # save_data(@state[:books_list], 'books_list')
-    # save_data(@state[:music_list], 'music_list')
+    save_data(@state[:books_list], 'books_list')
+    save_data(@state[:music_list], 'music_list')
     save_data(@state[:movies_list], 'movies_list')
-    # save_data(@state[:games_list], 'games_list')
-    # save_data(@state[:genres_list], 'genres_list')
-    # save_data(@state[:labels_list], 'labels_list')
-    # save_data(@state[:authors_list], 'authors_list')
-    # save_data(@state[:sources_list], 'sources_list')
+    save_data(@state[:games_list], 'games_list')
+    save_data(@state[:genres_list], 'genres_list')
+    save_data(@state[:labels_list], 'labels_list')
+    save_data(@state[:authors_list], 'authors_list')
+    save_data(@state[:sources_list], 'sources_list')
   end
 
   def load_data
@@ -85,6 +85,24 @@ class App
 
     elemnts.each do |ele|
       @state[ele] = recover_data(ele.to_s).nil? ? [] : recover_data(ele.to_s)
+    end
+    # print @state[:genres_list]
+
+    link_classes
+  end
+
+  def link_classes
+    @state[:books_list].each do |item|
+      add_missing_data(item, @state)
+    end
+    @state[:movies_list].each do |item|
+      add_missing_data(item, @state)
+    end
+    @state[:games_list].each do |item|
+      add_missing_data(item, @state)
+    end
+    @state[:music_list].each do |item|
+      add_missing_data(item, @state)
     end
   end
 end
