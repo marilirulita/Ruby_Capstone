@@ -19,25 +19,25 @@ def list_all(arr, label)
 end
 
 def loop_method(arr, id)
-  arr.map do |e|
+  object = arr.map do |e|
     e if e.id == id
   end
+
+  object[0]
 end
 
 def add_missing_data(item, data)
-  return unless item.genre.is_a?(Integer)
-
   genreobj = loop_method(data[:genres_list], item.genre)
-  item.add_genre(genreobj[0])
+  item.add_genre(genreobj) if genreobj != nil
 
-  # labelobj = loop_method(data[:labels_list], item.label)
-  # item.add_label(labelobj[0])
+  labelobj = loop_method(data[:labels_list], item.label)
+  item.add_label(labelobj) if labelobj != nil
 
-  # authorobj = loop_method(data[:authors_list], item.author)
-  # item.add_author(authorobj[0])
+  authorobj = loop_method(data[:authors_list], item.author)
+  item.add_author(authorobj) if authorobj != nil
 
-  # sourceobj = loop_method(data[:sources_list], item.source)
-  # item.add_source(sourceobj[0])
+  sourceobj = loop_method(data[:sources_list], item.source)
+  item.add_source(sourceobj) if sourceobj != nil
 end
 
 def list_all_genres_sources(arr, label)
