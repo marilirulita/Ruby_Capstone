@@ -12,8 +12,8 @@ def generate_id(container)
   until new_id_found
     new_id = rand(1...1000)
     new_id_found = true
-    container.each do |person|
-      if person.id == new_id
+    container.each do |item|
+      if item.id == new_id
         new_id_found = false
         break
       end
