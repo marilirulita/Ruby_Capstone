@@ -40,9 +40,9 @@ def add_missing_data(item, data)
   # item.add_source(sourceobj[0])
 end
 
-def list_all_genre_source(arr, label)
+def list_all_genre_source(arr)
   puts ''
-  puts "List of all #{label}"
+  puts 'List of all genres'
   puts 'id | name'
   puts '___________'
   arr.each do |item|
@@ -54,7 +54,7 @@ end
 
 def list_all_label(arr)
   puts ''
-  puts 'List of all Labes'
+  puts 'List of all labels'
   puts 'id | title | color'
   puts '___________'
   arr.each do |item|
@@ -67,7 +67,7 @@ end
 
 def list_all_author(arr)
   puts ''
-  puts 'List of all Authors'
+  puts 'List of all authors'
   puts 'id | name | last name'
   puts '___________'
   arr.each do |item|
