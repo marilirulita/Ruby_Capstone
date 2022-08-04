@@ -1,4 +1,5 @@
 require_relative './helpers/menu_options'
+require_relative './helpers/preserve_data'
 
 class App
   def initialize
@@ -50,5 +51,18 @@ class App
     else
       option_not_available
     end
+
+    save_state
+  end
+
+  def save_state
+    save_data(state[:books_list], 'genres')
+    save_data(state[:music_list], 'music_albums')
+    save_data(state[:movies_list], 'movies')
+    save_data(state[:games_list], 'games')
+    save_data(state[:genres_list], 'genres')
+    save_data(state[:labels_list], 'labels')
+    save_data(state[:authors_list], 'authors')
+    save_data(state[:sources_list], 'sources')
   end
 end
