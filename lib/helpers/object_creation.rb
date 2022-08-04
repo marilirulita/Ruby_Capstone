@@ -86,9 +86,9 @@ end
 
 def create_label(state)
   id = generate_id_for(state[:labels_list])
-  print 'Title: '
+  print 'Label title: '
   title = gets.chomp
-  print 'Color: '
+  print 'Label color: '
   color = gets.chomp
 
   Label.new(title, color, id)
@@ -96,9 +96,9 @@ end
 
 def create_author(state)
   id = generate_id_for(state[:authors_list])
-  print 'First name: '
+  print 'Author first name: '
   name = gets.chomp
-  print 'Last name: '
+  print 'Author last name: '
   last_name = gets.chomp
 
   Author.new(id, name, last_name)
