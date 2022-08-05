@@ -24,6 +24,21 @@ class Game < Item
     }.to_json(*args)
   end
 
+  def self.json_create(object)
+    multiplayer = object['multiplayer']
+    last_played_at = object['last_played_at']
+    publish_date = object['publish_date']
+    archived = object['archived']
+    id = object['id']
+
+    obj = new(multiplayer, last_played_at, publish_date, archived, id)
+    obj.genre = object['genre']
+    obj.author = object['author']
+    obj.label = object['label']
+    obj.source = object['source']
+    obj
+  end
+
   private
 
   def can_be_archived?
