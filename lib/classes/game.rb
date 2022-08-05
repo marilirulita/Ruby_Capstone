@@ -16,12 +16,27 @@ class Game < Item
       'multiplayer' => @multiplayer,
       'last_played_at' => @last_played_at,
       'publish_date' => publish_date,
-      'genre_id' => @genre.to_json,
-      'author_id' => @author.id,
-      'source_id' => @source.id,
-      'label_id' => @label.id,
+      'genre' => @genre.id,
+      'author' => @author.id,
+      'source' => @source.id,
+      'label' => @label.id,
       'archived' => archived
     }.to_json(*args)
+  end
+
+  def self.json_create(object)
+    multiplayer = object['multiplayer']
+    last_played_at = object['last_played_at']
+    publish_date = object['publish_date']
+    archived = object['archived']
+    id = object['id']
+
+    obj = new(multiplayer, last_played_at, publish_date, archived, id)
+    obj.genre = object['genre']
+    obj.author = object['author']
+    obj.label = object['label']
+    obj.source = object['source']
+    obj
   end
 
   private

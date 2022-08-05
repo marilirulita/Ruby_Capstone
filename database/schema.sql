@@ -16,6 +16,13 @@ CREATE TABLE genres(
   PRIMARY KEY(id)
 );
 
+CREATE TABLE authors(
+  id GENERATED ALWAYS AS IDENTITY,
+  first_name TEXT,
+  last_name TEXT,
+  PRIMARY KEY(id)
+);
+
 CREATE TABLE books(
   id INTEGER GENERATED ALWAYS AS INDENTITY PRIMARY KEY,
   genre INTEGER REFERENCES genres(id),
@@ -38,7 +45,7 @@ CREATE TABLE movies(
   archived BOOLEAN,
   silet BOOLEAN,
   PRIMARY KEY(id)
-;)
+);
 
 CREATE TABLE musicAlbum(
   id INTEGER GENERATED ALWAYS AS IDENTITY,
@@ -49,5 +56,17 @@ CREATE TABLE musicAlbum(
   publish_date DATE,
   archived BOOLEAN,
   on_spotify BOOLEAN,
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE games(
+  id INTEGER GENERATED ALWAYS AS IDENTITY,
+  genre INTEGER REFERENCES genres(id),
+  author INTEGER REFERENCES authors(id),
+  label INTEGER REFERENCES labels(id),
+  source INTEGER REFERENCES sources(id),
+  publish_date DATE,
+  multiplayer BOOLEAN,
+  las_time_played_at DATE,
   PRIMARY KEY(id)
 );

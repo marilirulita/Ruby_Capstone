@@ -20,7 +20,7 @@ end
 
 def loop_method(arr, id)
   object = arr.map do |e|
-    e if e.id == id
+    return e if e.id == id
   end
 
   object[0]
@@ -84,6 +84,10 @@ def add_element(element, state)
     add_movie_to(state)
   when 'Music Album'
     add_music_album_to(state)
+  when 'Book'
+    add_book_to(state)
+  when 'Game'
+    add_game_to(state)
   else
     raise NoMethodError, "There's no method for this option"
   end
@@ -111,6 +115,20 @@ def add_music_album_to(state)
   new_album = create_music(music_album_id, state)
   state[:music_list] << new_album
   add_to_state(new_album, state)
+end
+
+def add_book_to(state)
+  book_id = generate_id_for(state[:books_list])
+  new_book = create_book(book_id, state)
+  state[:books_list] << new_book
+  add_to_state(new_book, state)
+end
+
+def add_game_to(state)
+  game_id = generate_id_for(state[:games_list])
+  new_game = create_game(game_id, state)
+  state[:games_list] << new_game
+  add_to_state(new_game, state)
 end
 
 def add_to_state(item, state)

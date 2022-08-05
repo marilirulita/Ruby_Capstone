@@ -28,10 +28,10 @@ class App
       { id: 7, text: 'List all authors', method: 'list_all_author(@state[:authors_list])' },
       { id: 8, text: 'List all sources', method: 'list_all_genres_sources(@state[:sources_list], "sources")' },
       # add
-      { id: 9, text: 'Add a book', method: 'add_element("Book")' },
+      { id: 9, text: 'Add a book', method: 'add_element("Book", @state)' },
       { id: 10, text: 'Add a music album', method: 'add_element("Music Album", @state)' },
       { id: 11, text: 'Add a movie', method: 'add_element("Movie", @state)' },
-      { id: 12, text: 'Add a game', method: 'add_element("Game")' },
+      { id: 12, text: 'Add a game', method: 'add_element("Game", @state)' },
       { id: 13, text: 'Exit', method: 'exit' }
     ]
   end
@@ -74,20 +74,18 @@ class App
   end
 
   def load_data
-    elemnts = %i[books_list
-                 music_list
-                 movies_list
-                 games_list
-                 genres_list
-                 labels_list
-                 authors_list
-                 sources_list]
+    elements = %i[books_list
+                  music_list
+                  movies_list
+                  games_list
+                  genres_list
+                  labels_list
+                  authors_list
+                  sources_list]
 
-    elemnts.each do |ele|
-      @state[ele] = recover_data(ele.to_s).nil? ? [] : recover_data(ele.to_s)
+    elements.each do |element|
+      @state[element] = recover_data(element.to_s).nil? ? [] : recover_data(element.to_s)
     end
-    # print @state[:genres_list]
-
     link_classes
   end
 
