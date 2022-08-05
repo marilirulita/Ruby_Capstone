@@ -20,4 +20,8 @@ class Source
       'id' => id
     }.to_json(*args)
   end
+
+  def self.json_create(object)
+    new(object['name'], object['id'])
+  end
 end

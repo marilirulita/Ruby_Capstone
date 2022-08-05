@@ -1,1 +1,7 @@
-["#<Label:0x00007f38b80bf6b0>"]
+[
+  { "json_class": "Label", "id": 22, "title": "Book", "color": "White" },
+  { "json_class": "Label", "id": 790, "title": "Music", "color": "Blue" },
+  { "json_class": "Label", "id": 406, "title": "Movie", "color": "Red" },
+  { "json_class": "Label", "id": 293, "title": "Game", "color": "Green" },
+  { "json_class": "Label", "id": 31, "title": "Book", "color": "White" }
+]

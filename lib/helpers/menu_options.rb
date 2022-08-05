@@ -1,46 +1,46 @@
 require_relative 'object_creation'
 require_relative 'preserve_data'
 
-def list_all(arr, label, data)
+def list_all(arr, label)
   puts ''
   puts "List of all #{label}"
-  puts 'id | title | author | genre | source'
+  puts 'id | label | author | genre | source'
   puts '____________________________________'
   arr.each do |item|
-    add_missing_data(item, data)
     print "#{item.id} | "
-    # print "#{item.label.title} | "
-    # print "#{item.author.name} "
-    # print "#{item.author.last_name} | "
+    print "[#{item.label.color}] "
+    print "#{item.label.title} | "
+    print "#{item.author.name} "
+    print "#{item.author.last_name} | "
     print "#{item.genre.name} | "
-    # print "#{item.source.name} \n"
+    print "#{item.source.name} \n"
   end
   run
 end
 
 def loop_method(arr, id)
-  arr.map do |e|
-    e if e.id == id
+  object = arr.map do |e|
+    return e if e.id == id
   end
+
+  object[0]
 end
 
 def add_missing_data(item, data)
-  return unless item.genre.is_a?(Integer)
-
   genreobj = loop_method(data[:genres_list], item.genre)
-  item.add_genre(genreobj[0])
+  item.add_genre(genreobj) unless genreobj.nil?
 
-  # labelobj = loop_method(data[:labels_list], item.label)
-  # item.add_label(labelobj[0])
+  labelobj = loop_method(data[:labels_list], item.label)
+  item.add_label(labelobj) unless labelobj.nil?
 
-  # authorobj = loop_method(data[:authors_list], item.author)
-  # item.add_author(authorobj[0])
+  authorobj = loop_method(data[:authors_list], item.author)
+  item.add_author(authorobj) unless authorobj.nil?
 
-  # sourceobj = loop_method(data[:sources_list], item.source)
-  # item.add_source(sourceobj[0])
+  sourceobj = loop_method(data[:sources_list], item.source)
+  item.add_source(sourceobj) unless sourceobj.nil?
 end
 
-def list_all_genre_source(arr, label)
+def list_all_genres_sources(arr, label)
   puts ''
   puts "List of all #{label}"
   puts 'id | name'
@@ -52,9 +52,9 @@ def list_all_genre_source(arr, label)
   run
 end
 
-def list_all_label(arr, label)
+def list_all_label(arr)
   puts ''
-  puts "List of all #{label}"
+  puts 'List of all labels'
   puts 'id | title | color'
   puts '___________'
   arr.each do |item|
@@ -65,9 +65,9 @@ def list_all_label(arr, label)
   run
 end
 
-def list_all_author(arr, label)
+def list_all_author(arr)
   puts ''
-  puts "List of all #{label}"
+  puts 'List of all authors'
   puts 'id | name | last name'
   puts '___________'
   arr.each do |item|
@@ -84,6 +84,8 @@ def add_element(element, state)
     add_movie_to(state)
   when 'Music Album'
     add_music_album_to(state)
+  when 'Book'
+    add_book_to(state)
   when 'Game'
     add_game_to(state)
   else
@@ -113,6 +115,13 @@ def add_music_album_to(state)
   new_album = create_music(music_album_id, state)
   state[:music_list] << new_album
   add_to_state(new_album, state)
+end
+
+def add_book_to(state)
+  book_id = generate_id_for(state[:books_list])
+  new_book = create_book(book_id, state)
+  state[:books_list] << new_book
+  add_to_state(new_book, state)
 end
 
 def add_game_to(state)

@@ -10,15 +10,27 @@ class Movie < Item
     super || @silet ? true : false
   end
 
-  def to_json(*_args)
+  def to_json(*args)
     {
       JSON.create_id => self.class.name,
+      'silet' => @silet,
+      # inherited
       'id' => id,
-      'genre_id' => @genre.to_json,
-      'author_id' => @author.id,
-      'source_id' => @source.id,
-      'label_id' => @label.id,
-      'silet' => @silet
+      'archived' => @archived,
+      'publish_date' => @publish_date,
+      'genre' => @genre.id,
+      'author' => @author.id,
+      'source' => @source.id,
+      'label' => @label.id
     }.to_json(*args)
+  end
+
+  def self.json_create(object)
+    obj = new(object['publish_date'], object['id'], archived: object['archived'], silet: object['silet'])
+    obj.genre = object['genre']
+    obj.author = object['author']
+    obj.label = object['label']
+    obj.source = object['source']
+    obj
   end
 end

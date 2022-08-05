@@ -15,16 +15,32 @@ class Book < Item
 
   def to_json(*args)
     {
-      id: id,
+      JSON.create_id => self.class.name,
       publisher: @publisher,
       cover_state: @cover_state,
+      # inherited
+      id: id,
       publish_date: publish_date,
       archived: archived,
       label: @label.id,
       source: @source.id,
       author: @author.id,
-      genre: @genre.id,
-      JSON.create_id => self.class.name
+      genre: @genre.id
     }.to_json(*args)
+  end
+
+  def self.json_create(object)
+    publisher = object['publisher']
+    cover_state = object['cover_state']
+    publish_date = object['publish_date']
+    archived = object['archived']
+    id = object['id']
+
+    obj = new(publisher, cover_state, publish_date, archived, id)
+    obj.genre = object['genre']
+    obj.author = object['author']
+    obj.label = object['label']
+    obj.source = object['source']
+    obj
   end
 end

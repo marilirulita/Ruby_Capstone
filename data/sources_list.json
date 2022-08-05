@@ -1,1 +1,7 @@
-[{"json_class":"Source","name":"Friend","id":382}]
+[
+  { "json_class": "Source", "name": "Oreilly.com", "id": 656 },
+  { "json_class": "Source", "name": "Spotify", "id": 310 },
+  { "json_class": "Source", "name": "Disney+", "id": 467 },
+  { "json_class": "Source", "name": "Xbox Store", "id": 773 },
+  { "json_class": "Source", "name": "Oreilly.com", "id": 333 }
+]
