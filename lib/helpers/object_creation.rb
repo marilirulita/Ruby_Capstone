@@ -1,6 +1,7 @@
 require_relative '../classes/movie'
 require_relative '../classes/book'
 require_relative '../classes/music_album'
+require_relative '../classes/game'
 require_relative '../classes/genre'
 require_relative '../classes/label'
 require_relative '../classes/author'
@@ -28,6 +29,19 @@ def create_music(music_id, state)
   album = MusicAlbum.new(publish_date, spotify, id, archived: archived)
   item_setters(album, state)
   album
+end
+
+def create_game(game_id, state)
+  id = game_id
+  multiplayer = ask_is_multiplayer?
+  last_played_at = ask_last_played_at
+  publish_date = ask_publish_date
+  archived = ask_archived
+
+  game = Game.new(multiplayer, last_played_at, publish_date, archived, id)
+  p game
+  item_setters(game, state)
+  game
 end
 
 def item_setters(item, state)
@@ -64,6 +78,19 @@ end
 
 def ask_is_silet
   print 'Is silet? [Yy/Nn]: '
+  response = gets.chomp
+
+  parse_response(response)
+end
+
+def ask_last_played_at
+  puts 'When was the last time you played this game'
+  print 'Please use this format [yyyy-mm-dd]: '
+  gets.chomp
+end
+
+def ask_is_multiplayer?
+  print 'Is this a multiplayer game? [Yy/Nn]: '
   response = gets.chomp
 
   parse_response(response)
