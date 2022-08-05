@@ -74,17 +74,17 @@ class App
   end
 
   def load_data
-    elemnts = %i[books_list
-                 music_list
-                 movies_list
-                 games_list
-                 genres_list
-                 labels_list
-                 authors_list
-                 sources_list]
+    elements = %i[books_list
+                  music_list
+                  movies_list
+                  games_list
+                  genres_list
+                  labels_list
+                  authors_list
+                  sources_list]
 
-    elemnts.each do |ele|
-      @state[ele] = recover_data(ele.to_s).nil? ? [] : recover_data(ele.to_s)
+    elements.each do |element|
+      @state[element] = recover_data(element.to_s).nil? ? [] : recover_data(element.to_s)
     end
     link_classes
   end

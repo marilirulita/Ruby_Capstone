@@ -31,6 +31,18 @@ def create_music(music_id, state)
   album
 end
 
+def create_game(game_id, state)
+  id = game_id
+  multiplayer = ask_is_multiplayer?
+  last_played_at = ask_last_played_at
+  publish_date = ask_publish_date
+  archived = ask_archived
+
+  game = Game.new(multiplayer, last_played_at, publish_date, archived, id)
+  item_setters(game, state)
+  game
+end
+
 def create_book(book_id, state)
   id = book_id
   publish_date = ask_publish_date
@@ -41,18 +53,6 @@ def create_book(book_id, state)
   book = Book.new(publisher, cover_state, publish_date, archived, id)
   item_setters(book, state)
   book
-end
-
-def create_game(game_id, state)
-  id = game_id
-  publish_date = ask_publish_date
-  archived = ask_archived
-  multiplayer = ask_multiplayer
-  last_played_at = ask_last_played
-
-  game = Game.new(multiplayer, last_played_at, publish_date, archived, id)
-  item_setters(game, state)
-  game
 end
 
 def item_setters(item, state)
@@ -109,8 +109,14 @@ def ask_is_silet
   parse_response(response)
 end
 
-def ask_multiplayer
-  print 'Is multiplayer= [Yy/Nn]: '
+def ask_last_played_at
+  puts 'When was the last time you played this game'
+  print 'Please use this format [yyyy-mm-dd]: '
+  gets.chomp
+end
+
+def ask_is_multiplayer?
+  print 'Is this a multiplayer game? [Yy/Nn]: '
   response = gets.chomp
 
   parse_response(response)
