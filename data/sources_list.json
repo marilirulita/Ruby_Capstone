@@ -1,1 +1,12 @@
-[{"json_class":"Source","name":"Kindle","id":129},{"json_class":"Source","name":"Google books","id":986},{"json_class":"Source","name":"Kindle","id":991},{"json_class":"Source","name":"Youtube Music","id":762},{"json_class":"Source","name":"Youtube Music","id":267},{"json_class":"Source","name":"Online Shop","id":120},{"json_class":"Source","name":"Netflix","id":226},{"json_class":"Source","name":"Blockbuster","id":873},{"json_class":"Source","name":"Kindle","id":96},{"json_class":"Source","name":"Xbox Store","id":679}]
+[
+  { "json_class": "Source", "name": "Kindle", "id": 129 },
+  { "json_class": "Source", "name": "Google books", "id": 986 },
+  { "json_class": "Source", "name": "Kindle", "id": 991 },
+  { "json_class": "Source", "name": "Youtube Music", "id": 762 },
+  { "json_class": "Source", "name": "Youtube Music", "id": 267 },
+  { "json_class": "Source", "name": "Online Shop", "id": 120 },
+  { "json_class": "Source", "name": "Netflix", "id": 226 },
+  { "json_class": "Source", "name": "Blockbuster", "id": 873 },
+  { "json_class": "Source", "name": "Kindle", "id": 96 },
+  { "json_class": "Source", "name": "Xbox Store", "id": 679 }
+]
