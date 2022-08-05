@@ -16,10 +16,10 @@ class Game < Item
       'multiplayer' => @multiplayer,
       'last_played_at' => @last_played_at,
       'publish_date' => publish_date,
-      'genre_id' => @genre.to_json,
-      'author_id' => @author.id,
-      'source_id' => @source.id,
-      'label_id' => @label.id,
+      'genre' => @genre.id,
+      'author' => @author.id,
+      'source' => @source.id,
+      'label' => @label.id,
       'archived' => archived
     }.to_json(*args)
   end
