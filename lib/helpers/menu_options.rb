@@ -84,6 +84,8 @@ def add_element(element, state)
     add_movie_to(state)
   when 'Music Album'
     add_music_album_to(state)
+  when "Book"
+    add_book_to(state)
   else
     raise NoMethodError, "There's no method for this option"
   end
@@ -118,4 +120,21 @@ def add_to_state(item, state)
   state[:genres_list] << item.genre
   state[:sources_list] << item.source
   state[:labels_list] << item.label
+end
+
+def add_book_to(state)
+  book_id = generate_id_for(state[:books_list])
+  new_book = create_book(book_id, state)
+  state[:books_list] << new_book
+  add_to_state(new_book, state)
+end
+
+def ask_cover_state
+  print "Type cover state: "
+  gets.chomp
+end
+
+def ask_publisher
+  print "Publisher: "
+  gets.chomp
 end
