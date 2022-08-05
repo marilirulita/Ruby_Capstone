@@ -1,5 +1,6 @@
 require_relative '../classes/movie'
 require_relative '../classes/book'
+require_relative '../classes/game'
 require_relative '../classes/music_album'
 require_relative '../classes/genre'
 require_relative '../classes/label'
@@ -42,6 +43,18 @@ def create_book(book_id, state)
   book
 end
 
+def create_game(game_id, state)
+  id = game_id
+  publish_date = ask_publish_date
+  archived = ask_archived
+  multiplayer = ask_multiplayer
+  last_played_at = ask_last_played
+
+  game = Game.new(multiplayer, last_played_at, publish_date, archived, id)
+  item_setters(game, state)
+  game
+end
+
 def item_setters(item, state)
   puts 'Please select the author info'
   author = create_author(state)
@@ -76,6 +89,11 @@ def ask_publish_date
   gets.chomp
 end
 
+def ask_last_played
+  print 'Last time played [yyyy-mm-dd]: '
+  gets.chomp
+end
+
 def ask_archived
   puts 'Select if is already archived'
   print 'Is archived? [Yy/Nn]: '
@@ -86,6 +104,13 @@ end
 
 def ask_is_silet
   print 'Is silet? [Yy/Nn]: '
+  response = gets.chomp
+
+  parse_response(response)
+end
+
+def ask_multiplayer
+  print 'Is multiplayer= [Yy/Nn]: '
   response = gets.chomp
 
   parse_response(response)
@@ -132,16 +157,4 @@ def create_author(state)
   last_name = gets.chomp
 
   Author.new(name, last_name, id)
-end
-
-def create_book(book_id, state)
-  id = book_id
-  publish_date = ask_publish_date
-  archived = ask_archived
-  cover_state = ask_cover_state
-  publisher = ask_publisher
-
-  book = Book.new(publisher, cover_state, publish_date, archived, id)
-  item_setters(book, state)
-  book
 end

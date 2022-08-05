@@ -31,7 +31,7 @@ class App
       { id: 9, text: 'Add a book', method: 'add_element("Book", @state)' },
       { id: 10, text: 'Add a music album', method: 'add_element("Music Album", @state)' },
       { id: 11, text: 'Add a movie', method: 'add_element("Movie", @state)' },
-      { id: 12, text: 'Add a game', method: 'add_element("Game")' },
+      { id: 12, text: 'Add a game', method: 'add_element("Game", @state)' },
       { id: 13, text: 'Exit', method: 'exit' }
     ]
   end
