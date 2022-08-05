@@ -36,7 +36,7 @@ def create_book(book_id, state)
   archived = ask_archived
   cover_state = ask_cover_state
   publisher = ask_publisher
-  
+
   book = Book.new(publisher, cover_state, publish_date, archived, id)
   item_setters(book, state)
   book
