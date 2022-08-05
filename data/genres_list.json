@@ -1,12 +1,1 @@
-[
-  { "json_class": "Genre", "name": "Horror", "id": 393 },
-  { "json_class": "Genre", "name": "Programming", "id": 222 },
-  { "json_class": "Genre", "name": "Kids", "id": 345 },
-  { "json_class": "Genre", "name": "Pop", "id": 741 },
-  { "json_class": "Genre", "name": "Punk Rock", "id": 965 },
-  { "json_class": "Genre", "name": "Pop", "id": 153 },
-  { "json_class": "Genre", "name": "Action", "id": 423 },
-  { "json_class": "Genre", "name": "Drama", "id": 6 },
-  { "json_class": "Genre", "name": "Horror", "id": 650 },
-  { "json_class": "Genre", "name": "First Person Shooter", "id": 242 }
-]
+[{"json_class":"Genre","name":"Programming","id":455},{"json_class":"Genre","name":"Funk Rock","id":4},{"json_class":"Genre","name":"Drama","id":871},{"json_class":"Genre","name":"First Person Shooter","id":342},{"json_class":"Genre","name":"Programming","id":399}]
