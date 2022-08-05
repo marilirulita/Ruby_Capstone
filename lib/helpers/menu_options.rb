@@ -20,24 +20,28 @@ end
 
 def loop_method(arr, id)
   object = arr.map do |e|
-    e if e.id == id
+    if e.id == id
+      return e
+    end
   end
 
   object[0]
 end
 
 def add_missing_data(item, data)
-  genreobj = loop_method(data[:genres_list], item.genre)
+  genreobj = loop_method(data[:genres_list], item.genre) if item.genre.is_a? Integer
   item.add_genre(genreobj) unless genreobj.nil?
 
-  labelobj = loop_method(data[:labels_list], item.label)
+  labelobj = loop_method(data[:labels_list], item.label) if item.label.is_a? Integer
   item.add_label(labelobj) unless labelobj.nil?
 
-  authorobj = loop_method(data[:authors_list], item.author)
+  authorobj = loop_method(data[:authors_list], item.author) if item.author.is_a? Integer
   item.add_author(authorobj) unless authorobj.nil?
 
-  sourceobj = loop_method(data[:sources_list], item.source)
+  sourceobj = loop_method(data[:sources_list], item.source) if item.source.is_a? Integer
   item.add_source(sourceobj) unless sourceobj.nil?
+
+  print "#{item.inspect} \n\n"
 end
 
 def list_all_genres_sources(arr, label)
@@ -84,6 +88,8 @@ def add_element(element, state)
     add_movie_to(state)
   when 'Music Album'
     add_music_album_to(state)
+  when 'Book'
+    add_book_to(state)
   else
     raise NoMethodError, "There's no method for this option"
   end
@@ -111,6 +117,13 @@ def add_music_album_to(state)
   new_album = create_music(music_album_id, state)
   state[:music_list] << new_album
   add_to_state(new_album, state)
+end
+
+def add_book_to(state)
+  book_id = generate_id_for(state[:books_list])
+  new_book = create_book(book_id, state)
+  state[:books_list] << new_book
+  add_to_state(new_book, state)
 end
 
 def add_to_state(item, state)
