@@ -21,7 +21,7 @@ CREATE TABLE authors(
   first_name TEXT,
   last_name TEXT,
   PRIMARY KEY(id)
-)
+);
 
 CREATE TABLE books(
   id INTEGER GENERATED ALWAYS AS INDENTITY PRIMARY KEY,
@@ -45,7 +45,7 @@ CREATE TABLE movies(
   archived BOOLEAN,
   silet BOOLEAN,
   PRIMARY KEY(id)
-;)
+);
 
 CREATE TABLE musicAlbum(
   id INTEGER GENERATED ALWAYS AS IDENTITY,
