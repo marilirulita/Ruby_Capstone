@@ -58,3 +58,15 @@ CREATE TABLE musicAlbum(
   on_spotify BOOLEAN,
   PRIMARY KEY(id)
 );
+
+CREATE TABLE games(
+  id INTEGER GENERATED ALWAYS AS IDENTITY,
+  genre INTEGER REFERENCES genres(id),
+  author INTEGER REFERENCES authors(id),
+  label INTEGER REFERENCES labels(id),
+  source INTEGER REFERENCES sources(id),
+  publish_date DATE,
+  multiplayer BOOLEAN,
+  las_time_played_at DATE,
+  PRIMARY KEY(id)
+);
