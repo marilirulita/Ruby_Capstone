@@ -127,6 +127,8 @@ end
 def add_game_to(state)
   game_id = generate_id_for(state[:games_list])
   new_game = create_game(game_id, state)
+  state[:games_list] << new_game
+  add_to_state(new_game, state)
 end
 
 def add_to_state(item, state)
