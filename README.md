@@ -7,6 +7,9 @@
 - Ruby
 - SQL
 
+## Video Presentation
+[Here](https://drive.google.com/file/d/1tYle1-7evN_f-9wVgAYk-voKYlEBRPCF/view?usp=sharing)
+
 # Getting Started
 
 This repository includes files with ruby.
