@@ -86,8 +86,6 @@ class App
     elemnts.each do |ele|
       @state[ele] = recover_data(ele.to_s).nil? ? [] : recover_data(ele.to_s)
     end
-    # print @state[:genres_list]
-
     link_classes
   end
 

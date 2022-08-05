@@ -30,6 +30,18 @@ def create_music(music_id, state)
   album
 end
 
+def create_book(book_id, state)
+  id = book_id
+  publish_date = ask_publish_date
+  archived = ask_archived
+  cover_state = ask_cover_state
+  publisher = ask_publisher
+
+  book = Book.new(publisher, cover_state, publish_date, archived, id)
+  item_setters(book, state)
+  book
+end
+
 def item_setters(item, state)
   puts 'Please select the author info'
   author = create_author(state)
@@ -46,6 +58,16 @@ def item_setters(item, state)
   puts 'Please select label info'
   label = create_label(state)
   item.add_label(label)
+end
+
+def ask_cover_state
+  print 'Type cover state: '
+  gets.chomp
+end
+
+def ask_publisher
+  print 'Publisher: '
+  gets.chomp
 end
 
 def ask_publish_date
