@@ -158,15 +158,3 @@ def create_author(state)
 
   Author.new(name, last_name, id)
 end
-
-def create_book(book_id, state)
-  id = book_id
-  publish_date = ask_publish_date
-  archived = ask_archived
-  cover_state = ask_cover_state
-  publisher = ask_publisher
-
-  book = Book.new(publisher, cover_state, publish_date, archived, id)
-  item_setters(book, state)
-  book
-end
