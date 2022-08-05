@@ -1,0 +1,394 @@
+[33mcommit 6489d8e829946ee7a488fea90d856820a9aa4eb0[m[33m ([m[1;36mHEAD -> [m[1;32mteam-member-4[m[33m)[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 23:31:35 2022 -0500
+
+    Change add_element helper function to add Movie
+
+[33mcommit 252460b9a30a1c57f4f933eea041c0abfafcb777[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 23:18:27 2022 -0500
+
+    Refactor helpers to be a folder with different files for different purposes
+
+[33mcommit 09500ace5a2663f2778b520af5462360f0ee4c73[m
+Merge: 870e7a1 671ef8a
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 22:46:50 2022 -0500
+
+    Resolve merge conflicts
+
+[33mcommit 870e7a1165141f7c0a0eaac25d81594408293703[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 19:47:46 2022 -0500
+
+    Fix linter error
+
+[33mcommit 52f08ad9c4e9c64dc2bbd32b6933ef6334889e90[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 19:47:04 2022 -0500
+
+    Add run method call at the end of run method to make it loop through the menu options
+
+[33mcommit f7a37220248d48f65b8e6121d5da3614e58daced[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 19:44:56 2022 -0500
+
+    Add sample classes to avoid linter errors
+
+[33mcommit da4d66ee2ed98653614f8a63ae17cf5fbb13d9d3[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 19:40:38 2022 -0500
+
+    Add placeholder files to pass tests
+
+[33mcommit b7b1339f4708c7ec6426f17855496f9189dff544[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 19:13:40 2022 -0500
+
+    Add create_movie function
+
+[33mcommit 42e410fb92ae25c27f691c545c9d8a14daea00c5[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 18:01:32 2022 -0500
+
+    Add ask_publish_date function
+
+[33mcommit 14c3f1bc34abe358284aee685c0aab9594bdcd76[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 17:54:11 2022 -0500
+
+    Add return value to ask_publish_date function
+
+[33mcommit 9b9ede726e0adfd3c09c330840b6fbe727ff6308[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 17:52:36 2022 -0500
+
+    Add create functions for Genre, Source, Label, Author classes
+
+[33mcommit 6adaf73e75b5ab40e8829285435d32ae5b2ae7e7[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 17:25:35 2022 -0500
+
+    Fix linter errors
+
+[33mcommit f84f442598071add5314e08ad9457cb0b4103457[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 16:08:26 2022 -0500
+
+    Add tests for add_source method in Movie class and test for add_item in Source class
+
+[33mcommit 04bb0d7e93e8384abfbb9ac0df3fe368ce0418c2[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 16:02:09 2022 -0500
+
+    Add add_item method to Source class
+
+[33mcommit aad622885ae9ef98f16a9473b4f5eaecde50b6c2[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 22:40:10 2022 -0500
+
+    Rebase develop branch
+
+[33mcommit 87e228fe27f1663c088922d432ec3f999ebc8643[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 15:15:02 2022 -0500
+
+    Add Source class
+
+[33mcommit 6ca4e54e364f7279852cd1c44ab391a5ac5a402a[m[33m ([m[1;31morigin/develop[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mdevelop[m[33m)[m
+Merge: 5ae9ffa ab20c9d
+Author: Fernando Salas <luisfernandosalasg@gmail.com>
+Date:   Tue Aug 2 22:12:55 2022 -0500
+
+    Merge pull request #50 from marilirulita/team-member-1
+    
+    Team member 1
+
+[33mcommit ab20c9dd099c8bc1c9afcfaa5d36f7809ff5bae4[m[33m ([m[1;31morigin/team-member-1[m[33m, [m[1;32mteam-member-1[m[33m)[m
+Author: Fernando Salas <luisfernandosalasg@gmail.com>
+Date:   Tue Aug 2 21:42:44 2022 -0500
+
+    Fix linters
+
+[33mcommit 5ae9ffa7bde6fb8d95613d056d546a0b6c5b2122[m
+Merge: 1a33464 3017835
+Author: Mar Bautista <marilirulita@gmail.com>
+Date:   Tue Aug 2 18:52:21 2022 -0700
+
+    Merge pull request #49 from marilirulita/team-member-2
+    
+    Remove rubocop disables and add arr objects to manage options
+
+[33mcommit 30178354218de2459a8904b14039fa9873ce264c[m[33m ([m[1;31morigin/team-member-2[m[33m)[m
+Author: mar <marilirulita@gmail.com>
+Date:   Tue Aug 2 18:32:43 2022 -0700
+
+    fix linters for music album clas
+
+[33mcommit b3e5d1402183146b5c715166d3632fea74b67486[m
+Author: mar <marilirulita@gmail.com>
+Date:   Tue Aug 2 18:27:06 2022 -0700
+
+    add musicAlbum class and tests
+
+[33mcommit 671ef8acf7a114d79714794eb729b82383b96a74[m[33m ([m[1;31morigin/team-member-4[m[33m)[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 19:47:46 2022 -0500
+
+    Fix linter error
+
+[33mcommit 0b3589de8758e2368b0be771b0aa9caa69f4e4e4[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 19:47:04 2022 -0500
+
+    Add run method call at the end of run method to make it loop through the menu options
+
+[33mcommit 9bea130d422a70188bc2ea5c7f22574ddf02cf54[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 19:44:56 2022 -0500
+
+    Add sample classes to avoid linter errors
+
+[33mcommit 75a826f2796adb1ae2d68b4a099630600fd8a315[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 19:40:38 2022 -0500
+
+    Add placeholder files to pass tests
+
+[33mcommit 1f30dbff64d0eabad3e32f736378fa24c2ac48de[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 19:25:42 2022 -0500
+
+    Add option action to list all movies and to add movie
+
+[33mcommit 5d549ae52f510e118ca0e5c6ba1b79ac166cf8d6[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 19:13:40 2022 -0500
+
+    Add create_movie function
+
+[33mcommit 88983faf674d6f846fd9350432123dc2f7d1f05f[m
+Author: mar <marilirulita@gmail.com>
+Date:   Tue Aug 2 17:05:39 2022 -0700
+
+    Remove rubocop disables and add arr objects to manage options
+
+[33mcommit ec6a70238155d1b47f8a1c5749710300f371b309[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 18:01:32 2022 -0500
+
+    Add ask_publish_date function
+
+[33mcommit 28d3278bf829975d0e1b71069229f2ac529bd923[m
+Author: Fernando Salas <luisfernandosalasg@gmail.com>
+Date:   Tue Aug 2 18:00:39 2022 -0500
+
+    Fix linters
+
+[33mcommit e1e7a36867b15615391008b1cd312db0945fd05b[m
+Author: Fernando Salas <luisfernandosalasg@gmail.com>
+Date:   Tue Aug 2 17:59:23 2022 -0500
+
+    Add test for Label class
+
+[33mcommit b6b9497d98a1c9644ed3462ccd55f04aa07256f4[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 17:54:11 2022 -0500
+
+    Add return value to ask_publish_date function
+
+[33mcommit b5e00125afb65600891424cc2ad88a7b7d76a434[m
+Author: Fernando Salas <luisfernandosalasg@gmail.com>
+Date:   Tue Aug 2 17:53:49 2022 -0500
+
+    Add Label class
+
+[33mcommit e6bae03869a2be4fade70d12d81e5f250d15ccb7[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 17:52:36 2022 -0500
+
+    Add create functions for Genre, Source, Label, Author classes
+
+[33mcommit 430065319d0bf724e75103677aaf57de3b19add7[m
+Author: Fernando Salas <luisfernandosalasg@gmail.com>
+Date:   Tue Aug 2 17:48:40 2022 -0500
+
+    Add unit tests for Book class
+
+[33mcommit 3ae205607e76fa1dfcb86597cb4012e7d72f4123[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 17:25:35 2022 -0500
+
+    Fix linter errors
+
+[33mcommit ec9b6e11fc7b8cd11f528eda87e562b66539d656[m
+Author: Fernando Salas <luisfernandosalasg@gmail.com>
+Date:   Tue Aug 2 17:21:41 2022 -0500
+
+    Add Book class and implement method can_be_archived
+
+[33mcommit 814156f83db2493c2a09f2019b91ca09186e5d0d[m
+Merge: 6ebcebf 0233884
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 17:18:09 2022 -0500
+
+    Merge branch 'team-member-4-1' into team-member-4
+
+[33mcommit 1a33464643057a7b506080aae5d8b07f435b3ef9[m
+Merge: 4162e8a 6ebcebf
+Author: Amaury Permer <code_shadow@hotmail.com>
+Date:   Tue Aug 2 17:17:22 2022 -0500
+
+    Merge pull request #47 from marilirulita/team-member-4
+    
+    Team member 4
+
+[33mcommit 0233884979778ee1b28afc8246a216ca9ff044b2[m[33m ([m[1;32mteam-member-4-1[m[33m)[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 16:08:26 2022 -0500
+
+    Add tests for add_source method in Movie class and test for add_item in Source class
+
+[33mcommit f1a87f96ccc6b7ad8a703cf6779b98f4a927faec[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 16:02:09 2022 -0500
+
+    Add add_item method to Source class
+
+[33mcommit 1a95e82e00250bab76dcb15481b6b102343d0a58[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 15:24:58 2022 -0500
+
+    Add generate_id_for function
+
+[33mcommit 31b5afe21421b5aa96d68e98307687cd34c3d614[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 15:15:02 2022 -0500
+
+    Add Source class
+
+[33mcommit 6ebcebf8531feeb226aaa4e94caf8adf6e2d7940[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 15:03:53 2022 -0500
+
+    Fix linter errors
+
+[33mcommit e158fdc82d4d3fc43edb5abe886b942c5a2a4fdb[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 14:12:15 2022 -0500
+
+    Add test for can_be_archived? method
+
+[33mcommit 602b34ec4e33f5274b1742c4a388ac7a1e616436[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 14:11:40 2022 -0500
+
+    Fix can_be_archived? method
+
+[33mcommit d2d01b6a25687ece6c2ee0499b2707604180e5bf[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 14:04:47 2022 -0500
+
+    Bug fix, change silet for @silet in can_be_archived? method
+
+[33mcommit 8f7428e5df100606b67d153d8214dd75f8853361[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 14:01:30 2022 -0500
+
+    Remove create_date function
+
+[33mcommit 7ba6a7ba5eb942dff9d0b38226fd59c700df3d40[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 13:44:47 2022 -0500
+
+    Add can_be_Archived? method
+
+[33mcommit 05593cf18edb3f4f2459f209564e16431e238d7d[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 13:36:14 2022 -0500
+
+    Add create_date function to create dates easily
+
+[33mcommit 815b2f46405ece777fa515576a42d16e4c386d49[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 13:23:45 2022 -0500
+
+    Add Movie class
+
+[33mcommit 4162e8a4a3189e8ada737d0cdadde7e5ab2db87d[m
+Merge: 337d182 d783357
+Author: Amaury Permer <code_shadow@hotmail.com>
+Date:   Tue Aug 2 11:51:58 2022 -0500
+
+    Merge pull request #46 from marilirulita/group-tasks
+    
+    Group tasks
+
+[33mcommit d7833579375c90df7dd63eb63a3a8d6656b2650c[m[33m ([m[1;31morigin/group-tasks[m[33m, [m[1;32mgroup-tasks[m[33m)[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 11:51:05 2022 -0500
+
+    fix linter errors
+
+[33mcommit ca60384d2193248bf6ddbe7a679e99c19872f534[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 11:49:51 2022 -0500
+
+    Fix linter errors
+
+[33mcommit a4c5635c2f7d7f79348a0c9ab13060d9e904c086[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 11:40:42 2022 -0500
+
+    Initialize items arrays
+
+[33mcommit f036fd14fed5e69701d22ca493d3c342a1629553[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 11:39:06 2022 -0500
+
+    Add menu options case statement
+
+[33mcommit 15cc25b5ae4954c9c26eacdf947608c76b13360c[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 11:29:38 2022 -0500
+
+    Add App class as entry point for main.rb
+
+[33mcommit 426e8bb8af9691ddf4970e19defaf6c338ad01ad[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 11:28:54 2022 -0500
+
+    Add helpers file to store helpers functions
+
+[33mcommit 74b7d0201e8069d6a46cd928e1e88d42d069e19f[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 11:03:55 2022 -0500
+
+    Add Item class
+
+[33mcommit e09e70254f0fba83c1c51724189b8799e038640b[m
+Author: Trictonicmp <code_shadow@hotmail.com>
+Date:   Tue Aug 2 10:48:50 2022 -0500
+
+    Add folder structure
+
+[33mcommit 337d18231ecf0b20c476aee492ed4a30d78193e5[m
+Merge: 8b73bad 4457059
+Author: Amaury Permer <code_shadow@hotmail.com>
+Date:   Tue Aug 2 10:23:31 2022 -0500
+
+    Merge pull request #45 from marilirulita/kanban_board
+    
+    add setup linters and test files
+
+[33mcommit 4457059aa52fd4c4ace023b1d20500b5cf0d179f[m[33m ([m[1;31morigin/kanban_board[m[33m)[m
+Author: mar <marilirulita@gmail.com>
+Date:   Mon Aug 1 14:15:47 2022 -0700
+
+    add setup linters and test files
+
+[33mcommit 8b73badff414ae6a13fb37d953e86a314861f21a[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Mar Bautista <marilirulita@gmail.com>
+Date:   Mon Aug 1 12:42:40 2022 -0700
+
+    Initial commit
