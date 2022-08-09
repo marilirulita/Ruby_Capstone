@@ -49,6 +49,7 @@ class App
     show_menu
     puts ''
     print 'Option number: '
+
     op = gets.chomp.to_i
 
     if op.positive? && op <= options.length
@@ -74,17 +75,10 @@ class App
   end
 
   def load_data
-    elements = %i[books_list
-                  music_list
-                  movies_list
-                  games_list
-                  genres_list
-                  labels_list
-                  authors_list
-                  sources_list]
-
-    elements.each do |element|
-      @state[element] = recover_data(element.to_s).nil? ? [] : recover_data(element.to_s)
+    elements = @state
+    elements.each do |key, val|
+      val = recover_data(key.to_s).nil? ? [] : recover_data(key.to_s)
+      @state[key] = val
     end
     link_classes
   end
